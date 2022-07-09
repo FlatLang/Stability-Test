@@ -41,7 +41,8 @@ import "stabilitytest/syntax/IteratorStability"
     LiteralMethodNamesStability,
     LiteralFieldNamesStability,
     UnaryOperatorStability,
-    IteratorStability
+    IteratorStability,
+    EqualsStability
 ]]
 [Target c]
 [TestSuite [

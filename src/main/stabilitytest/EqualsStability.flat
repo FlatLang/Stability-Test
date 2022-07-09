@@ -1,0 +1,22 @@
+package "stabilitytest"
+
+import "novex/nest/Nest"
+import "novex/nest/TestSuite"
+
+import static "novex/nest/Nest"
+
+testable class {
+    test `equivalent string array equality`() {
+        let array1 = ["one", "two", "three"]
+        let array2 = ["one", "two", "three"]
+
+        expect(array1).toBe(array2)
+    }
+
+    test `unequivalent string array equality`() {
+        let array1 = ["one", "two", "three"]
+        let array2 = ["one", "two", "four"]
+
+        expect(array1).toNotBe(array2)
+    }
+}
