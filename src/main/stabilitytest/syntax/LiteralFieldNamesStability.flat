@@ -1,0 +1,64 @@
+package "stabilitytest/syntax"
+
+import "flatlang/datastruct/list/Iterator"
+
+import "novex/nest/Nest"
+import "novex/nest/TestSuite"
+
+import static "novex/nest/Nest"
+
+testable class LiteralFieldNamesStability {
+  String `my literal field` => "hey"
+
+  test `access single literal field name`() {
+    let value = `my literal field`
+
+    expect(value).toBe("hey")
+  }
+
+  static class ClassWithLiteralFieldName {
+    var String `value thing`
+
+    `my lit`() => `value thing` = "yo, it's lit"
+
+    `add something spicy`(String spice) => `value thing` += spice
+  }
+
+  test `access single literal field name as argument to function`() {
+    expect(`my literal field`).toBe("hey")
+  }
+
+  test `access single literal field name with subsequent call`() {
+    let value = `my literal field`.toUpperCase()
+
+    expect(value).toBe("HEY")
+  }
+
+  test `access single literal field name with preceding call`() {
+    let value = new ClassWithLiteralFieldName().`my lit`()
+
+    expect(value).toBe("yo, it's lit")
+  }
+
+  test `access single literal field name with preceding and subsequent call`() {
+    let value = new ClassWithLiteralFieldName().`my lit`().toUpperCase()
+
+    expect(value).toBe("YO, IT'S LIT")
+  }
+
+  test `access single literal field name with chaining calls`() {
+    let value = new ClassWithLiteralFieldName():`my lit`():`add something spicy`(" spicy!!").`value thing`.toUpperCase()
+
+    expect(value).toBe("YO, IT'S LIT SPICY!!")
+  }
+
+  test `access single literal field name with chaining calls on multiple lines`() {
+    let value = new ClassWithLiteralFieldName()
+      :`my lit`()
+      :`add something spicy`(" spicy!!")
+      .`value thing`
+      .toUpperCase()
+
+    expect(value).toBe("YO, IT'S LIT SPICY!!")
+  }
+}
