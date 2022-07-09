@@ -1,0 +1,111 @@
+package "stabilitytest"
+
+import "flatlang/time/Timer"
+import "flatlang/thread/Thread"
+import "flatlang/io/File"
+import "flatlang/io/FancyOutputStream"
+
+import "novex/nest/TestResult"
+
+import "stabilitytest/syntax/IfStatementStability"
+import "stabilitytest/syntax/ElseStatementStability"
+import "stabilitytest/syntax/ElseIfStatementStability"
+import "stabilitytest/syntax/LiteralMethodNamesStability"
+import "stabilitytest/syntax/LiteralFieldNamesStability"
+import "stabilitytest/syntax/UnaryOperatorStability"
+import "stabilitytest/syntax/IteratorStability"
+
+[TestSuite [
+    ExceptionStability,
+    SyntaxStability,
+    ClosureStability,
+    PolymorphismStability,
+    LambdaStability,
+    ToStringStability,
+    AssignmentStability,
+    StaticImportStability,
+    InnerClassStability,
+    ExternalInnerClassStability,
+    PrimitiveOverloadStability,
+    FancyOutputStreamTests,
+    FirstClassFunctionStability,
+    LibraryLoadingStability,
+    IntervalStability,
+    BoundedIntervalStability,
+    BoundlessIntervalStability,
+    NetworkStability,
+    CastStability,
+    IfStatementStability,
+    ElseStatementStability,
+    ElseIfStatementStability,
+    LiteralMethodNamesStability,
+    LiteralFieldNamesStability,
+    UnaryOperatorStability,
+    IteratorStability
+]]
+[Target c]
+[TestSuite [
+    TimeStability,
+    ThreadStability,
+    FileStability,
+    RegexStability
+]]
+class StabilityTest {
+    public static async main(String args[]) {
+        let test = new StabilityTest()
+
+        Timer timer = new Timer().start()
+
+        let results = new TestResult[]
+
+        let suites = args.skip(2)
+
+        if (suites.count > 0) {
+            suites.forEach({
+                native TestResult[] suiteResults
+                var count = 0
+
+                external js {
+                    #{suiteResults} = [];
+
+                    var instance = #{System.jsCreateInstance(_)};
+
+                    instance.runTests((r) => {
+                        #{suiteResults}.push(r);
+                        #{count}++;
+                    });
+                }
+
+                for (i in 0..count) {
+                    results.add(suiteResults[i])
+                }
+            })
+        } else {
+            await test.runTests({
+                results.add(_)
+            })
+        }
+
+        let fancy = new FancyOutputStream(headerPattern: "/\\")
+
+        let unsuccessful = results.filter({ !_.success })
+
+        if (unsuccessful.count > 0) {
+            fancy.writeHeader("#unsuccessful.count Failure#{unsuccessful.count == 1 ? "" : "s"} out of #results.count test#{results.count == 1 ? "" : "s"}", pattern: ":'( ", symmetrical: true)
+
+            unsuccessful.forEach({
+                Console.log("#_")
+            })
+        } else {
+            fancy.writeHeader("All #results.count Successful", pattern: ":) ", symmetrical: true)
+        }
+
+        timer.stop()
+
+        Console.writeLine("Took " + timer.duration + "ms")
+
+        if (unsuccessful.count > 0) {
+            System.exit(1)
+        }
+    }
+}
