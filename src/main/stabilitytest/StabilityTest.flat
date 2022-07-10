@@ -7,6 +7,7 @@ import "flatlang/io/FancyOutputStream"
 
 import "novex/nest/TestResult"
 
+import "stabilitytest/io/FileStability"
 import "stabilitytest/syntax/IfStatementStability"
 import "stabilitytest/syntax/ElseStatementStability"
 import "stabilitytest/syntax/ElseIfStatementStability"
@@ -42,14 +43,14 @@ import "stabilitytest/syntax/IteratorStability"
     LiteralFieldNamesStability,
     UnaryOperatorStability,
     IteratorStability,
-    EqualsStability
+    EqualsStability,
+    FileStability,
+    RegexStability
 ]]
 [Target c]
 [TestSuite [
     TimeStability,
-    ThreadStability,
-    FileStability,
-    RegexStability
+    ThreadStability
 ]]
 class StabilityTest {
     public static async main(String args[]) {
