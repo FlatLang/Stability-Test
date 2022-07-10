@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        path: Stability-Test
 
     - name: Checkout Flat CLI
       uses: actions/checkout@master
@@ -72,28 +74,30 @@ jobs:
         path: Redis
 
     - name: Build Stability Test
+      working-directory: Stability-Test
       run: |
-        java -jar Flat/target/flatc.jar \
+        java -jar ../Flat/target/flatc.jar \
           src \
-          -l Nest \
-          -l Compiler-String-Extensions \
-          -l Network \
-          -l Redis \
-          -install-dir . \
+          -l ../Nest \
+          -l ../Compiler-String-Extensions \
+          -l ../Network \
+          -l ../Redis \
+          -install-dir .. \
           -main stabilitytest/StabilityTest \
-          -o dist/index.js \
+          -o dist/test.js \
           -target js
 
     - uses: actions/upload-artifact@v3
       if: failure()
       with:
-        name: index.js
-        path: dist/index.js
+        name: test.js
+        path: Stability-Test/dist/test.js
 
     - uses: actions/setup-node@v3
       with:
         node-version: 14
 
     - name: Run Stability Test
+      working-directory: Stability-Test
       run: |
-        node dist/index.js
+        node dist/test.js
