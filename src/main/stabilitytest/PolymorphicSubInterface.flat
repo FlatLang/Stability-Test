@@ -1,5 +1,0 @@
-package "stabilitytest"
-
-interface PolymorphicSubInterface {
-    public toString() => "sub interface"
-}
