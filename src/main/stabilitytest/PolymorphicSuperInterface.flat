@@ -1,5 +1,0 @@
-package "stabilitytest"
-
-interface PolymorphicSuperInterface {
-    public toString() => "super interface"
-}

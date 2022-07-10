@@ -1,0 +1,45 @@
+package "stabilitytest"
+
+import "flatlang/thread/Thread"
+
+import "novex/nest/Nest"
+import "novex/nest/TestSuite"
+
+import static "novex/nest/Nest"
+
+testable class ThreadStability {
+    [Test "Testing 20 Threads with memory access"]
+    public test() {
+        ThreadImplementation[] threads = new Array(20)
+
+        createThreads(threads, 20)
+
+        checkMemoryAccess()
+
+        joinThreads(threads, 20)
+    }
+
+    createThreads(ThreadImplementation[] threads, Int amount) {
+        StabilityExceptionHandler handler = new StabilityExceptionHandler()
+
+        for (i in 0..amount) {
+            threads[i] = new ThreadImplementation(10, 10)
+            //threads[i].addUncaughtExceptionHandler(handler)
+            threads[i].start()
+        }
+    }
+
+    static checkMemoryAccess() {
+        Thread.sleep(30)
+
+        for (i in 0..1000) {
+            String s = Int.toString(i)
+        }
+    }
+
+    static joinThreads(ThreadImplementation[] threads, Int amount) {
+        for (i in 0..amount) {
+            threads[i].join()
+        }
+    }
+}
