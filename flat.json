@@ -2,18 +2,20 @@
   "name": "StabilityTest",
   "version": "1.0.0",
   "description": "Stability test for Flat",
-  "mainClass": "stabilitytest/StabilityTest",
-  "outDirectory": "dist",
-  "source": "src",
-  "scripts": {
-
-  },
   "author": "Braden Steffaniak",
   "license": "ISC",
-  "dependencies": {
-    "../Nest": "local",
-    "../Network": "local",
-    "../Redis": "local",
-    "../Compiler-String-Extensions": "local"
+  "scripts": {
+    "test": "node dist/test.js"
+  },
+  "test": {
+    "mainClass": "stabilitytest/StabilityTest",
+    "outDirectory": "dist",
+    "source": "src",
+    "dependencies": {
+      "../Nest": "local",
+      "../Network": "local",
+      "../Redis": "local",
+      "../Compiler-String-Extensions": "local"
+    }
   }
 }
