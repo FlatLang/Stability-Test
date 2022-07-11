@@ -95,4 +95,49 @@ testable class PrimitiveOverloadStability {
 
         expect(str).toBe("a")
     }
+
+    test `unboxes primitive at the correct time (allows for null primitives)`() {
+        let array = ["one", "two", "three"]
+
+        let index = array.firstNonNull<Int>({
+            if (_ == "one") {
+                return 0
+            }
+        })
+
+        expect(index).toNotBe(null)
+
+        if (index) {
+
+        } else {
+            fail("Failed to unbox primitive correctly")
+        }
+
+        if (!index) {
+            fail("Failed to unbox primitive correctly (second if)")
+        }
+    }
+
+    [Target js]
+    test `unboxes primitive: doesnt unbox if could potentially be null`() {
+        let array = [0, 1, 2]
+
+        let index = array.first
+
+        if (index) {
+
+        } else {
+            fail("Failed to unbox primitive correctly")
+        }
+
+        if (!index) {
+            fail("Failed to unbox primitive correctly (second if)")
+        }
+
+        external {
+            if (#{index}.value !== 0) {
+                #{fail("Expected index to be a boxed primitive")}
+            }
+        }
+    }
 }
