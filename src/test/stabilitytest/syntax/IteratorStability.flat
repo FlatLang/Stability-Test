@@ -75,4 +75,61 @@ testable class {
       expect(values[1]).toBe("2")
       expect(values[2]).toBe("3")
   }
+
+  test `ArrayIterator.next`() {
+    let array = ["one", "two", "three"]
+    let iterator = array.iterator
+
+    expect(iterator.next).toBe("one")
+
+    iterator.stepNext
+
+    expect(iterator.next).toBe("two")
+
+    iterator.stepNext
+
+    expect(iterator.next).toBe("three")
+
+    iterator.stepNext
+
+    expect(iterator.next).toBe(null)
+  }
+
+  test `ArrayIterator.current`() {
+    let array = ["one", "two", "three"]
+    let iterator = array.iterator
+
+    expect(iterator.current).toBe(null)
+
+    iterator.stepNext
+
+    expect(iterator.current).toBe("one")
+
+    iterator.stepNext
+
+    expect(iterator.current).toBe("two")
+
+    iterator.stepNext
+
+    expect(iterator.current).toBe("three")
+  }
+
+  test `ArrayIterator.previous`() {
+    let array = ["one", "two", "three"]
+    let iterator = array.iterator
+
+    expect(iterator.previous).toBe(null)
+
+    iterator.stepNext
+
+    expect(iterator.previous).toBe(null)
+
+    iterator.stepNext
+
+    expect(iterator.previous).toBe("one")
+
+    iterator.stepNext
+
+    expect(iterator.previous).toBe("two")
+  }
 }
