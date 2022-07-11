@@ -4,6 +4,7 @@
   "description": "Stability test for Flat",
   "author": "Braden Steffaniak",
   "license": "ISC",
+  "defaultTarget": "js",
   "scripts": {
     "test": "node dist/test.js"
   },
