@@ -13,10 +13,10 @@
     "outDirectory": "dist",
     "source": "src",
     "dependencies": {
-      "../Nest": "local",
-      "../Network": "local",
-      "../Redis": "local",
-      "../Compiler-String-Extensions": "local"
+      "github:FlatLang/Nest": "master",
+      "github:FlatLang/Network": "master",
+      "github:FlatLang/Redis": "master",
+      "github:FlatLang/Compiler-String-Extensions": "master"
     }
   }
 }
