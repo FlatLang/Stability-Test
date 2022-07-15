@@ -14,9 +14,9 @@
     "source": "src",
     "dependencies": {
       "github:FlatLang/Nest": "master",
+      "github:FlatLang/System": "master",
       "github:FlatLang/Network": "master",
-      "github:FlatLang/Redis": "master",
-      "github:FlatLang/Compiler-String-Extensions": "master"
+      "github:FlatLang/Redis": "master"
     }
   }
 }
