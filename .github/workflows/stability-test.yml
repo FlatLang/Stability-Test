@@ -103,6 +103,7 @@ jobs:
           -l ../IO \
           -l ../Time \
           -l ../System \
+          -l ../Standard-Library \
           -install-dir .. \
           -main stabilitytest/StabilityTest \
           -o dist/test.js \
