@@ -4,7 +4,7 @@ import "novex/nest/Nest"
 import "novex/nest/TestSuite"
 
 import static "novex/nest/Nest"
-import static "flatlang/math/Math"
+import static "flatlang/Math"
 
 [ExpectCompileError SyntaxErrorException]
 import static flatlang/math/Math
