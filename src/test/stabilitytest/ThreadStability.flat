@@ -9,7 +9,7 @@ import static "novex/nest/Nest"
 
 testable class ThreadStability {
     [Test "Testing 20 Threads with memory access"]
-    public test() {
+    public async test() {
         ThreadImplementation[] threads = new Array(20)
 
         createThreads(threads, 20)
@@ -29,7 +29,7 @@ testable class ThreadStability {
         }
     }
 
-    static checkMemoryAccess() {
+    static async checkMemoryAccess() {
         Thread.sleep(30)
 
         for (i in 0..1000) {

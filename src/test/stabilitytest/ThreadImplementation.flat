@@ -11,7 +11,7 @@ class ThreadImplementation extends Thread {
         this.millis = millis
     }
 
-    public run() {
+    public async run() {
         for (i in 0..times) {
             Thread.sleep(millis)
         }
