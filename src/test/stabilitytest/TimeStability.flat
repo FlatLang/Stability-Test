@@ -12,7 +12,7 @@ import static "novex/nest/Nest"
 
 testable class TimeStability {
     [Test "Testing Time.nova"]
-    public test() {
+    public async test() {
         let timer = new Timer()
         timer.start()
 

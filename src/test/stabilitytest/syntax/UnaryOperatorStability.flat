@@ -13,12 +13,12 @@ testable class {
   }
 
   async test `parses complex unary operater in if statement condition`() {
-    if (!await testFunc()) {
+    if (!testFunc()) {
       fail("Should not get into if statement")
     }
   }
 
   async test `parses complex unary operater in function call argument`() {
-    expect(!await testFunc()).toBe(false)
+    expect(!testFunc()).toBe(false)
   }
 }

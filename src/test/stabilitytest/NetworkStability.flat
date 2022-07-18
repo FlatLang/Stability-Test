@@ -19,21 +19,21 @@ testable class NetworkStability {
     public async testStartServerSocket() {
         let server = new ServerSocket()
 
-        expect(await server.start(PORT)).toBe(true, "Unable to start server")
+        expect(server.start(PORT)).toBe(true, "Unable to start server")
         expect(server.close()).toBe(true, "Unable to close server")
     }
 
     [Test "Testing ClientSocket connection"]
     public async testClientSocketConnection() {
-        let server = await new ServerSocket():start(PORT)
+        let server = new ServerSocket():start(PORT)
 
-        let receivedClientAsync = server.on("client_connected")
+        let receivedClientAsync = server.on("client_connected")$
 
         out.write("- accepting ClientSocket connection... ")
 
         let client = new ClientSocket("localhost", PORT)
 
-        expect(await client.connect()).toBe(true, "Client failed to connect")
+        expect(client.connect()).toBe(true, "Client failed to connect")
 
         let receivedClient = await receivedClientAsync
 
@@ -44,12 +44,12 @@ testable class NetworkStability {
 
     [Test "Testing Socket communication"]
     public async testSocketCommunication() {
-        let server = await new ServerSocket():start(PORT)
-        let client = await new ClientSocket("localhost", PORT):connect()
+        let server = new ServerSocket():start(PORT)
+        let client = new ClientSocket("localhost", PORT):connect()
 
         out.write("- sending String to ClientSocket... ")
 
-        let responseDataAsync = server.on("data")
+        let responseDataAsync = server.on("data")$
 
         expect(client.write(RECEIVED)).toBe(true, "Server unable to send data to client")
 

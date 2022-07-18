@@ -83,7 +83,7 @@ class StabilityTest {
                 }
             })
         } else {
-            await test.runTests({
+            test.runTests({
                 results.add(_)
             })
         }
