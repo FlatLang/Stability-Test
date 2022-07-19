@@ -15,6 +15,7 @@ import "stabilitytest/syntax/LiteralMethodNamesStability"
 import "stabilitytest/syntax/LiteralFieldNamesStability"
 import "stabilitytest/syntax/UnaryOperatorStability"
 import "stabilitytest/syntax/IteratorStability"
+import "stabilitytest/syntax/NamedArgumentStability"
 
 [TestSuite [
     ExceptionStability,
@@ -45,7 +46,8 @@ import "stabilitytest/syntax/IteratorStability"
     IteratorStability,
     EqualsStability,
     FileStability,
-    RegexStability
+    RegexStability,
+    NamedArgumentStability
 ]]
 [Target c]
 [TestSuite [
