@@ -12,7 +12,7 @@ import static "novex/nest/Nest"
 class ClientThread extends Thread {
     public construct(private Int port, private OutputStream out) {}
 
-    public run() {
+    public async run() {
         String ip = "127.0.0.1"
 
         let client = new ClientSocket(ip, port)
