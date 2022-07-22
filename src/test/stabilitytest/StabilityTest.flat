@@ -35,7 +35,6 @@ import "stabilitytest/syntax/NamedArgumentStability"
     IntervalStability,
     BoundedIntervalStability,
     BoundlessIntervalStability,
-    NetworkStability,
     CastStability,
     IfStatementStability,
     ElseStatementStability,
@@ -45,9 +44,13 @@ import "stabilitytest/syntax/NamedArgumentStability"
     UnaryOperatorStability,
     IteratorStability,
     EqualsStability,
-    FileStability,
     RegexStability,
     NamedArgumentStability
+]]
+[TargetRuntime not browser]
+[TestSuite [
+    NetworkStability,
+    FileStability
 ]]
 [Target c]
 [TestSuite [
