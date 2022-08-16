@@ -31,19 +31,19 @@ testable class ExceptionStability {
                 // Int den = 0
                 // Int i   = 43 / den
 
-                throw new DivideByZeroException()
+                throw DivideByZeroException()
             } catch (DivideByZeroException e) {
                 out.writeLine("- Success")
                 out.write("Testing StabilityTestException ")
 
-                throw new StabilityTestException()
+                throw StabilityTestException()
             }
 
             fail("Failed to catch DivideByZeroException")
         } catch (StabilityTestException e) {
             out.writeLine("- Success")
 
-            throw new Exception()
+            throw Exception()
         }
 
         fail("Failed to catch StabilityTestException")
@@ -55,7 +55,7 @@ testable class ExceptionStability {
         try {
             out.write("Testing soft exception without a soft catch ")
 
-            toss new StabilityTestException()
+            toss StabilityTestException()
 
             worked = true
 
@@ -68,7 +68,7 @@ testable class ExceptionStability {
 
         out.write("Testing soft exception with a soft catch ")
 
-        toss new DivideByZeroException()
+        toss DivideByZeroException()
 
         fail("Failed to exit subroutine after throwing soft Exception")
     }

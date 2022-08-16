@@ -34,10 +34,10 @@ testable class {
     }
 
     // init_test_class initClass() {
-    //     f = new File("temp#Time.currentTimeMillis")
+    //     f = File("temp#Time.currentTimeMillis")
 
-    //     writer = new FileWriter(f)
-    //     reader = new FileReader(f)
+    //     writer = FileWriter(f)
+    //     reader = FileReader(f)
     // }
 
     // [Test "Testing file creation"]

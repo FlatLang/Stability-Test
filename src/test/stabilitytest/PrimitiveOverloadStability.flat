@@ -10,7 +10,7 @@ import static "novex/nest/Nest"
 testable class PrimitiveOverloadStability {
     [Test "Testing primitive key for HashMap<Int, String>"]
     public test() {
-        let map1 = new HashMap<Int, String>()
+        let map1 = HashMap<Int, String>()
 
         map1[5] = "test"
         map1[10] = "test2"
@@ -30,7 +30,7 @@ testable class PrimitiveOverloadStability {
 
     [Test "Testing primitive key and value for HashMap<Int, Int>"]
     testPrimitiveKeyAndValue() {
-        let map2 = new HashMap<Int, Int>()
+        let map2 = HashMap<Int, Int>()
 
         var sum = 0
         var counter = 0
@@ -51,7 +51,7 @@ testable class PrimitiveOverloadStability {
 
     [Test "Testing functional primitive key for HashMap<Int, String>"]
     testFunctionalPrimitiveKey() {
-        let map1 = new HashMap<Int, String>()
+        let map1 = HashMap<Int, String>()
 
         map1[5] = "test"
         map1[10] = "test2"
@@ -71,7 +71,7 @@ testable class PrimitiveOverloadStability {
 
     [Test "Testing functional primitive key and value for HashMap<Int, Int>"]
     testFunctionalPrimitiveKeyAndValue() {
-        let map2 = new HashMap<Int, Int>()
+        let map2 = HashMap<Int, Int>()
 
         var sum = 0
         var counter = 0

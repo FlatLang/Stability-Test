@@ -5,6 +5,6 @@ class PolymorphicSuperClass implements PolymorphicSuperInterface {
 
     visible Int myProperty => 1
 
-    public giveBirth() => child = new PolymorphicSubClass()
+    public giveBirth() => child = PolymorphicSubClass()
     public toString() => "super class"
 }

@@ -189,7 +189,7 @@ testable class SyntaxStability {
 
     static test1() => null
     static test2() => null
-    static test3() => new Object()
+    static test3() => Object()
 
     static filterFunc(String i) -> Bool {
         return i.count >= 4
@@ -197,7 +197,7 @@ testable class SyntaxStability {
 
     static foreachClosure(String s) {
         if (s.count < 4) {
-            throw new UnstableException("filtering failed")
+            throw UnstableException("filtering failed")
         }
     }
 
@@ -354,13 +354,13 @@ testable class SyntaxStability {
 
     [Test "Testing safe navigation operator"]
     testSafeNavigation() {
-        var node = new Node()
+        var node = Node()
         node.value = 1
 
-        node.child = new Node()
+        node.child = Node()
         node.child.value = 2
 
-        node.child.child = new Node()
+        node.child.child = Node()
         node.child.child.value = 3
 
         out.write("if statement... ")
@@ -376,9 +376,9 @@ testable class SyntaxStability {
 
             expect(node?.child?.child?.value == 3).toBe(false, "Failed to skip null child")
 
-            node.child.child = new Node()
-            node.child.child.child = new Node()
-            node.child.child.child.child = new Node()
+            node.child.child = Node()
+            node.child.child.child = Node()
+            node.child.child.child.child = Node()
             node.child.child.child.child.value = 91
 
             out.write("function call... ")

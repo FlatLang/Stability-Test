@@ -14,7 +14,7 @@ testable class RedisStability {
 
     [Test "Testing Redis get"]
     testRedisGet() {
-        connection = new RedisConnection()
+        connection = RedisConnection()
 
 
     }

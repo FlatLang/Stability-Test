@@ -10,7 +10,7 @@ import static "novex/nest/Nest"
 testable class ThreadStability {
     [Test "Testing 20 Threads with memory access"]
     public async test() {
-        ThreadImplementation[] threads = new Array(20)
+        ThreadImplementation[] threads = Array(20)
 
         createThreads(threads, 20)
 
@@ -20,10 +20,10 @@ testable class ThreadStability {
     }
 
     createThreads(ThreadImplementation[] threads, Int amount) {
-        StabilityExceptionHandler handler = new StabilityExceptionHandler()
+        StabilityExceptionHandler handler = StabilityExceptionHandler()
 
         for (i in 0..amount) {
-            threads[i] = new ThreadImplementation(10, 10)
+            threads[i] = ThreadImplementation(10, 10)
             //threads[i].addUncaughtExceptionHandler(handler)
             threads[i].start()
         }

@@ -35,25 +35,25 @@ testable class LiteralFieldNamesStability {
   }
 
   test `access single literal field name with preceding call`() {
-    let value = new ClassWithLiteralFieldName().`my lit`()
+    let value = ClassWithLiteralFieldName().`my lit`()
 
     expect(value).toBe("yo, it's lit")
   }
 
   test `access single literal field name with preceding and subsequent call`() {
-    let value = new ClassWithLiteralFieldName().`my lit`().toUpperCase()
+    let value = ClassWithLiteralFieldName().`my lit`().toUpperCase()
 
     expect(value).toBe("YO, IT'S LIT")
   }
 
   test `access single literal field name with chaining calls`() {
-    let value = new ClassWithLiteralFieldName():`my lit`():`add something spicy`(" spicy!!").`value thing`.toUpperCase()
+    let value = ClassWithLiteralFieldName():`my lit`():`add something spicy`(" spicy!!").`value thing`.toUpperCase()
 
     expect(value).toBe("YO, IT'S LIT SPICY!!")
   }
 
   test `access single literal field name with chaining calls on multiple lines`() {
-    let value = new ClassWithLiteralFieldName()
+    let value = ClassWithLiteralFieldName()
       :`my lit`()
       :`add something spicy`(" spicy!!")
       .`value thing`

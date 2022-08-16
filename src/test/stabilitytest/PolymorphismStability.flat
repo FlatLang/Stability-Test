@@ -8,8 +8,8 @@ import static "novex/nest/Nest"
 testable class PolymorphismStability {
     [Test "Testing polymorphic method calls"]
     testCalls() {
-        PolymorphicSuperClass superClass = new PolymorphicSuperClass()
-        PolymorphicSubClass   subClass = new PolymorphicSubClass()
+        PolymorphicSuperClass superClass = PolymorphicSuperClass()
+        PolymorphicSubClass   subClass = PolymorphicSubClass()
 
         expect(testSubCall(subClass)).toBe(true, "Did not call sub class method")
     }
@@ -18,7 +18,7 @@ testable class PolymorphismStability {
 
     [Test "Testing polymorphic closure method calls"]
     testClosure() {
-        PolymorphicSuperClass obj = new PolymorphicSubClass()
+        PolymorphicSuperClass obj = PolymorphicSubClass()
 
         expect(callPolymorphicClosure(obj.toString)).toBe(true, "Did not call sub class method as closure")
 
@@ -33,8 +33,8 @@ testable class PolymorphismStability {
 
     [Test "Testing polymorphic properties"]
     testProperty() {
-        PolymorphicSuperClass superClass = new PolymorphicSuperClass()
-        PolymorphicSuperClass subClass = new PolymorphicSubClass()
+        PolymorphicSuperClass superClass = PolymorphicSuperClass()
+        PolymorphicSuperClass subClass = PolymorphicSubClass()
 
         expect(superClass.myProperty == 1).toBe(true, "Did not call super polymorphic property accessor correctly")
         expect(subClass.myProperty == 2).toBe(true, "Did not call sub polymorphic property accessor correctly")
@@ -42,8 +42,8 @@ testable class PolymorphismStability {
 
     [Test "Testing isOfType"]
     testIsOfType() {
-        PolymorphicSuperClass superClass = new PolymorphicSuperClass()
-        PolymorphicSuperClass subClass = new PolymorphicSubClass()
+        PolymorphicSuperClass superClass = PolymorphicSuperClass()
+        PolymorphicSuperClass subClass = PolymorphicSubClass()
 
         expect(superClass.class.isOfType(PolymorphicSubClass.class)).toBe(false, "Superclass should not be isOfType the subclass")
         expect(superClass.class.isOfType(PolymorphicSuperClass.class)).toBe(true, "Superclass should be isOfType itself")

@@ -11,7 +11,7 @@ import static "novex/nest/Nest"
 testable class AssignmentStability {
     [Test "Testing embedded property assignments"]
     testEmbeddedPropertyAssignments() {
-        var props = new ClassWithProperties()
+        var props = ClassWithProperties()
 
         var num = props.prop1 = props.prop2 = 1
 

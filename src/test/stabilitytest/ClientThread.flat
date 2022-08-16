@@ -15,7 +15,7 @@ class ClientThread extends Thread {
     public async run() {
         String ip = "127.0.0.1"
 
-        let client = new ClientSocket(ip, port)
+        let client = ClientSocket(ip, port)
 
         out.write("ClientSocket attempting to connect to #ip:#{port}... ")
 

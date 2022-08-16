@@ -13,8 +13,8 @@ testable class FancyOutputStreamTests {
     var StringBuilder builder
 
     init_test init() {
-        builder = new StringBuilder()
-        stream = new FancyOutputStream(builder)
+        builder = StringBuilder()
+        stream = FancyOutputStream(builder)
     }
 
     clean_test clean() {

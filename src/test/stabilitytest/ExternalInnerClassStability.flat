@@ -10,11 +10,11 @@ import static "novex/nest/Nest"
 testable class ExternalInnerClassStability {
     [Test "Testing external inner class access"]
     public test() {
-        let instance = new MyInner(3, 5)
-        
+        let instance = MyInner(3, 5)
+
         // [ExpectCompileError InvalidAccessError]
         // instance.y = 45
-        
+
         expect(instance.x).toBe(3, "did not set values correctly")
     }
 }

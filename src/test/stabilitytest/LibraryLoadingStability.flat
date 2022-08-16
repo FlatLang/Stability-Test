@@ -11,7 +11,7 @@ testable class LibraryLoadingStability {
     // var Library lib
 
     // init_test_class initClass() {
-    //     lib = new Library("C:/Users/Braden/GitHub/NovaWorkspace/testlib").load()
+    //     lib = Library("C:/Users/Braden/GitHub/NovaWorkspace/testlib").load()
 
     //     expectValue(lib, "Failed to load library")
     // }

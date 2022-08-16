@@ -35,25 +35,25 @@ testable class LiteralMethodNamesStability {
   }
 
   test `call single literal method name with preceding call`() {
-    let value = new ClassWithLiteralMethodName().`my lit`()
+    let value = ClassWithLiteralMethodName().`my lit`()
 
     expect(value).toBe("yo, it's lit")
   }
 
   test `call single literal method name with preceding and subsequent call`() {
-    let value = new ClassWithLiteralMethodName().`my lit`().toUpperCase()
+    let value = ClassWithLiteralMethodName().`my lit`().toUpperCase()
 
     expect(value).toBe("YO, IT'S LIT")
   }
 
   test `call single literal method name with chaining calls`() {
-    let value = new ClassWithLiteralMethodName():`my lit`():`add something spicy`(" spicy!!").value.toUpperCase()
+    let value = ClassWithLiteralMethodName():`my lit`():`add something spicy`(" spicy!!").value.toUpperCase()
 
     expect(value).toBe("YO, IT'S LIT SPICY!!")
   }
 
   test `call single literal method name with chaining calls on multiple lines`() {
-    let value = new ClassWithLiteralMethodName()
+    let value = ClassWithLiteralMethodName()
       :`my lit`()
       :`add something spicy`(" spicy!!")
       .value

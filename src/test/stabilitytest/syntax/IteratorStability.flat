@@ -50,14 +50,14 @@ testable class {
   // }
 
   test `basic HashMap iterator`() {
-      let map = new HashMap<String, String>()
+      let map = HashMap<String, String>()
         :add("one", "1")
         :add("two", "2")
         :add("three", "3")
 
       let iter = map.iterator
-      let keys = new Array<String>()
-      let values = new Array<String>()
+      let keys = Array<String>()
+      let values = Array<String>()
 
       while (iter.hasNext) {
         let pair = iter.stepNext

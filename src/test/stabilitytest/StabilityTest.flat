@@ -59,9 +59,9 @@ import "stabilitytest/syntax/NamedArgumentStability"
 ]]
 class StabilityTest {
     public static async main(String args[]) {
-        let test = new StabilityTest()
+        let test = StabilityTest()
 
-        Timer timer = new Timer().start()
+        Timer timer = Timer().start()
 
         let results = new TestResult[]
 
@@ -93,7 +93,7 @@ class StabilityTest {
             })
         }
 
-        let fancy = new FancyOutputStream(headerPattern: "/\\")
+        let fancy = FancyOutputStream(headerPattern: "/\\")
 
         let unsuccessful = results.filter({ !_.success })
 

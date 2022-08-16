@@ -17,19 +17,19 @@ import static "novex/nest/Nest"
 
 testable class BoundlessIntervalStability {
     test invalidBoundlessIntervalBounds() {
-        expect({ new BoundlessInterval(new DateTime(year: 4), new DateTime(year: 5)) }).toThrow(InvalidIntervalException.class)
+        expect({ BoundlessInterval(DateTime(year: 4), DateTime(year: 5)) }).toThrow(InvalidIntervalException.class)
     }
 
     test validIntervalBounds() {
-        expect({ new BoundlessInterval() }).toNotThrow(InvalidIntervalException.class)
-        expect({ new BoundlessInterval(new DateTime(year: 5)) }).toNotThrow(InvalidIntervalException.class)
-        expect({ new BoundlessInterval(end: new DateTime(year: 5)) }).toNotThrow(InvalidIntervalException.class)
-        expect({ new BoundlessInterval(null, new DateTime(year: 5)) }).toNotThrow(InvalidIntervalException.class)
-        expect({ new BoundlessInterval(new DateTime(year: 4), null) }).toNotThrow(InvalidIntervalException.class)
+        expect({ BoundlessInterval() }).toNotThrow(InvalidIntervalException.class)
+        expect({ BoundlessInterval(DateTime(year: 5)) }).toNotThrow(InvalidIntervalException.class)
+        expect({ BoundlessInterval(end: DateTime(year: 5)) }).toNotThrow(InvalidIntervalException.class)
+        expect({ BoundlessInterval(null, DateTime(year: 5)) }).toNotThrow(InvalidIntervalException.class)
+        expect({ BoundlessInterval(DateTime(year: 4), null) }).toNotThrow(InvalidIntervalException.class)
     }
 
     test infiniteIntervalValues() {
-        let interval = new Interval(null, new DateTime(year: 5))
+        let interval = Interval(null, DateTime(year: 5))
 
         expect({ interval.years }).toThrow(InfiniteIntervalException.class)
     }

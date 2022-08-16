@@ -142,14 +142,14 @@ testable class FirstClassFunctionStability {
 
     [Test "Testing single function in Array"]
     testSingleFunctionInArray() {
-        let array = new Array<func()>()
+        let array = Array<func()>()
 
         array.add(refFunc)
     }
 
 //    [Test "Testing calling a single function from Array"]
 //    testCallingFunctionFromCollection() {
-//        let array = new Array<func()>()
+//        let array = Array<func()>()
 //
 //        array.add(refFunc)
 //
@@ -162,7 +162,7 @@ testable class FirstClassFunctionStability {
 
 //    [Test "Testing calling a single function with parameters from Array"]
 //    testCallingFunctionWithParametersFromCollection() {
-//        let array = new Array<func(Int, String) -> Int>()
+//        let array = Array<func(Int, String) -> Int>()
 //
 //        array.add(paramFunc)
 //

@@ -21,7 +21,7 @@ testable class LambdaStability {
         //Console.writeLine("Mapped backwards: " + list.filter(x => x.count >= 4).map(x => x + "?").reverse().join(", "))
         //if (list2.map(x => x + "!").join(", ") != "")
 
-        LinkedList<String> linked = new LinkedList()
+        LinkedList<String> linked = LinkedList()
 
         linked.add("test").add("test2").add("test3")
 
