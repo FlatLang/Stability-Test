@@ -1,4 +1,4 @@
-package "stabilitytest"
+package stabilitytest
 
 class PolymorphicSuperClass implements PolymorphicSuperInterface {
   visible var PolymorphicSubClass child

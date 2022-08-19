@@ -1,11 +1,11 @@
-package "stabilitytest"
+package stabilitytest
 
-import "flatlang/io/OutputStream"
-import "flatlang/network/ClientSocket"
-import "flatlang/thread/Thread"
+import flatlang/io/OutputStream
+import flatlang/network/ClientSocket
+import flatlang/thread/Thread
 
-import "novex/nest/Nest"
-import "novex/nest/TestSuite"
+import novex/nest/Nest
+import novex/nest/TestSuite
 
 import static "novex/nest/Nest"
 

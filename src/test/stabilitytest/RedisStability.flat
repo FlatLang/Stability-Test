@@ -1,9 +1,9 @@
-package "stabilitytest"
+package stabilitytest
 
-import "flatlang/redis/RedisConnection"
+import flatlang/redis/RedisConnection
 
-import "novex/nest/Nest"
-import "novex/nest/TestSuite"
+import novex/nest/Nest
+import novex/nest/TestSuite
 
 import static "novex/nest/Nest"
 

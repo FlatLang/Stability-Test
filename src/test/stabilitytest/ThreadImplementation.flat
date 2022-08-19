@@ -1,6 +1,6 @@
-package "stabilitytest"
+package stabilitytest
 
-import "flatlang/thread/Thread"
+import flatlang/thread/Thread
 
 class ThreadImplementation extends Thread {
   Int times

@@ -1,12 +1,12 @@
-package "stabilitytest/io"
+package stabilitytest/io
 
-import "flatlang/io/File"
-import "flatlang/io/FileReader"
-import "flatlang/io/FileWriter"
-import "flatlang/time/Time"
+import flatlang/io/File
+import flatlang/io/FileReader
+import flatlang/io/FileWriter
+import flatlang/time/Time
 
-import "novex/nest/Nest"
-import "novex/nest/TestSuite"
+import novex/nest/Nest
+import novex/nest/TestSuite
 
 import static "novex/nest/Nest"
 

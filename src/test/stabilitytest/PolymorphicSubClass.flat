@@ -1,4 +1,4 @@
-package "stabilitytest"
+package stabilitytest
 
 class PolymorphicSubClass extends PolymorphicSuperClass implements PolymorphicSubInterface {
   visible Int myProperty => 2

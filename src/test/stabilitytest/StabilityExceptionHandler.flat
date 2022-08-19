@@ -1,10 +1,10 @@
-package "stabilitytest"
+package stabilitytest
 
-import "flatlang/thread/UncaughtExceptionHandler"
-import "flatlang/thread/Thread"
+import flatlang/thread/UncaughtExceptionHandler
+import flatlang/thread/Thread
 
-import "novex/nest/Nest"
-import "novex/nest/TestSuite"
+import novex/nest/Nest
+import novex/nest/TestSuite
 
 import static "novex/nest/Nest"
 

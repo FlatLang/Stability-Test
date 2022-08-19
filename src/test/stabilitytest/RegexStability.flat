@@ -1,11 +1,11 @@
-package "stabilitytest"
+package stabilitytest
 
-import "flatlang/regex/Regex"
-import "flatlang/regex/Match"
-import "flatlang/regex/Pattern"
+import flatlang/regex/Regex
+import flatlang/regex/Match
+import flatlang/regex/Pattern
 
-import "novex/nest/Nest"
-import "novex/nest/TestSuite"
+import novex/nest/Nest
+import novex/nest/TestSuite
 
 import static "novex/nest/Nest"
 

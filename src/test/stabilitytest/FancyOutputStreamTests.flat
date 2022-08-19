@@ -1,10 +1,10 @@
-package "stabilitytest"
+package stabilitytest
 
-import "flatlang/io/FancyOutputStream"
-import "flatlang/io/StringBuilder"
+import flatlang/io/FancyOutputStream
+import flatlang/io/StringBuilder
 
-import "novex/nest/Nest"
-import "novex/nest/TestSuite"
+import novex/nest/Nest
+import novex/nest/TestSuite
 
 import static "novex/nest/Nest"
 

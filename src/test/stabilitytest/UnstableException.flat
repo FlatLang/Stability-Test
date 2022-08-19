@@ -1,4 +1,4 @@
-package "stabilitytest"
+package stabilitytest
 
 class UnstableException extends Exception {
   public construct(String message) => super(message)

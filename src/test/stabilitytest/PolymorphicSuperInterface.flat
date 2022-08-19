@@ -1,4 +1,4 @@
-package "stabilitytest"
+package stabilitytest
 
 interface PolymorphicSuperInterface {
   public toString() => "super interface"

@@ -1,13 +1,10 @@
-package "stabilitytest"
+package stabilitytest
 
-import "novex/nest/Nest"
-import "novex/nest/TestSuite"
+import novex/nest/Nest
+import novex/nest/TestSuite
 
 import static "novex/nest/Nest"
 import static "flatlang/Math"
-
-[ExpectCompileError SyntaxErrorException]
-import static flatlang/math/Math
 
 testable class StaticImportStability {
   [Test "Testing math static imports"]

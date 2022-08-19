@@ -1,14 +1,14 @@
-package "stabilitytest"
+package stabilitytest
 
-import "flatlang/time/Timer"
-import "flatlang/time/DateTime"
-import "flatlang/time/DateTime.InvalidDateException"
-import "flatlang/time/Interval"
-import "flatlang/time/Interval.NoGapException"
-import "flatlang/thread/Thread"
+import flatlang/time/Timer
+import flatlang/time/DateTime
+import flatlang/time/DateTime.InvalidDateException
+import flatlang/time/Interval
+import flatlang/time/Interval.NoGapException
+import flatlang/thread/Thread
 
-import "novex/nest/Nest"
-import "novex/nest/TestSuite"
+import novex/nest/Nest
+import novex/nest/TestSuite
 
 import static "novex/nest/Nest"
 

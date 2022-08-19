@@ -1,9 +1,9 @@
-package "stabilitytest"
+package stabilitytest
 
-// import "flatlang/meta/Library"
+// import flatlang/meta/Library
 
-import "novex/nest/Nest"
-import "novex/nest/TestSuite"
+import novex/nest/Nest
+import novex/nest/TestSuite
 
 import static "novex/nest/Nest"
 
