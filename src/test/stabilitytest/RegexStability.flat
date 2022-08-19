@@ -7,7 +7,7 @@ import flatlang/regex/Pattern
 import novex/nest/Nest
 import novex/nest/TestSuite
 
-import static "novex/nest/Nest"
+import static novex/nest/Nest
 
 testable class {
   test `regex containsMatch can find valid match`() {

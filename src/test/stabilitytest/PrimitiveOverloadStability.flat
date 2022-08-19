@@ -5,7 +5,7 @@ import flatlang/datastruct/HashMap
 import novex/nest/Nest
 import novex/nest/TestSuite
 
-import static "novex/nest/Nest"
+import static novex/nest/Nest
 
 testable class PrimitiveOverloadStability {
   [Test "Testing primitive key for HashMap<Int, String>"]
