@@ -11,72 +11,72 @@ import "novex/nest/TestSuite"
 import static "novex/nest/Nest"
 
 testable class {
-    static final String inputString = "This is test input..."
+  static final String inputString = "This is test input..."
 
-    static final Int lines = 100
+  static final Int lines = 100
 
-    var File f
-    var FileWriter writer
-    var FileReader reader
+  var File f
+  var FileWriter writer
+  var FileReader reader
 
-    test `can get parent directory`() {
-        let file = File.EXECUTED_FILE
+  test `can get parent directory`() {
+    let file = File.EXECUTED_FILE
 
-        expect(file.name).toBe("test.js")
+    expect(file.name).toBe("test.js")
 
-        let parent = file.getParent()
+    let parent = file.getParent()
 
-        expect(parent.name).toBe("dist")
+    expect(parent.name).toBe("dist")
 
-        let parentParent = parent.getParent()
+    let parentParent = parent.getParent()
 
-        expect(parentParent.name).toBe("Stability-Test")
-    }
+    expect(parentParent.name).toBe("Stability-Test")
+  }
 
-    // init_test_class initClass() {
-    //     f = File("temp#Time.currentTimeMillis")
+  // init_test_class initClass() {
+  //   f = File("temp#Time.currentTimeMillis")
 
-    //     writer = FileWriter(f)
-    //     reader = FileReader(f)
-    // }
+  //   writer = FileWriter(f)
+  //   reader = FileReader(f)
+  // }
 
-    // [Test "Testing file creation"]
-    // createFile() {
-    //     expect(writer.create()).toBe(true, "Failed to create file")
-    // }
+  // [Test "Testing file creation"]
+  // createFile() {
+  //   expect(writer.create()).toBe(true, "Failed to create file")
+  // }
 
-    // [Test "Testing writing lines of data to file"]
-    // writeToFile() {
-    //     for (i in 0..lines) {
-    //         writer.writeLine(inputString)
-    //     }
-    // }
+  // [Test "Testing writing lines of data to file"]
+  // writeToFile() {
+  //   for (i in 0..lines) {
+  //     writer.writeLine(inputString)
+  //   }
+  // }
 
-    // [Test "Testing reading lines from file"]
-    // readFromFile() {
-    //     if (!reader.isOpen) {
-    //         reader.open()
-    //     }
+  // [Test "Testing reading lines from file"]
+  // readFromFile() {
+  //   if (!reader.isOpen) {
+  //     reader.open()
+  //   }
 
-    //     expect(reader.isOpen).toBe(true, "File reader failed to open")
+  //   expect(reader.isOpen).toBe(true, "File reader failed to open")
 
-    //     var Int times = 0
-    //     var line = reader.readLine()
+  //   var Int times = 0
+  //   var line = reader.readLine()
 
-    //     while (line) {
-    //         expect(line == inputString).toBe(true, "Reading from file failed: '#line' != '#inputString'")
+  //   while (line) {
+  //     expect(line == inputString).toBe(true, "Reading from file failed: '#line' != '#inputString'")
 
-    //         line = reader.readLine()
+  //     line = reader.readLine()
 
-    //         times++
-    //     }
+  //     times++
+  //   }
 
-    //     reader.close()
+  //   reader.close()
 
-    //     expect(times != lines).toBe(false, "Failed; only read #{times}/100 lines")
-    // }
+  //   expect(times != lines).toBe(false, "Failed; only read #{times}/100 lines")
+  // }
 
-    // clean_test_class deleteFile() {
-    //     expect(writer.delete()).toBe(true, "Failed to delete file")
-    // }
+  // clean_test_class deleteFile() {
+  //   expect(writer.delete()).toBe(true, "Failed to delete file")
+  // }
 }

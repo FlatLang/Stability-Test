@@ -1,5 +1,5 @@
 package "stabilitytest"
 
 class StabilityTestException extends Exception {
-    
+
 }

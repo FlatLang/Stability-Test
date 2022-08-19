@@ -6,23 +6,23 @@ import "novex/nest/TestSuite"
 import static "novex/nest/Nest"
 
 testable class InnerClassStability {
-    [Test "Checking inner classes"]
-    public test() {
-        let instance = MyInner(3, 5)
+  [Test "Checking inner classes"]
+  public test() {
+    let instance = MyInner(3, 5)
 
-        expect(instance.x == 3 && instance.y == 5).toBe(true, "did not set values correctly")
-    }
+    expect(instance.x == 3 && instance.y == 5).toBe(true, "did not set values correctly")
+  }
 
-    class MyInner {
-        public construct(public Int x, private Int y) {}
-    }
+  class MyInner {
+    public construct(public Int x, private Int y) {}
+  }
 }
 
 private class MyOuter {
-    public test() {
-        let instance = MyInner(4, 6)
+  public test() {
+    let instance = MyInner(4, 6)
 
-        // [ExpectCompileError InvalidAccessError]
-        // instance.y = 45
-    }
+    // [ExpectCompileError InvalidAccessError]
+    // instance.y = 45
+  }
 }

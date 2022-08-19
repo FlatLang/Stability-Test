@@ -16,21 +16,21 @@ import "novex/nest/TestSuite"
 import static "novex/nest/Nest"
 
 testable class BoundlessIntervalStability {
-    test invalidBoundlessIntervalBounds() {
-        expect({ BoundlessInterval(DateTime(year: 4), DateTime(year: 5)) }).toThrow(InvalidIntervalException.class)
-    }
+  test invalidBoundlessIntervalBounds() {
+    expect({ BoundlessInterval(DateTime(year: 4), DateTime(year: 5)) }).toThrow(InvalidIntervalException.class)
+  }
 
-    test validIntervalBounds() {
-        expect({ BoundlessInterval() }).toNotThrow(InvalidIntervalException.class)
-        expect({ BoundlessInterval(DateTime(year: 5)) }).toNotThrow(InvalidIntervalException.class)
-        expect({ BoundlessInterval(end: DateTime(year: 5)) }).toNotThrow(InvalidIntervalException.class)
-        expect({ BoundlessInterval(null, DateTime(year: 5)) }).toNotThrow(InvalidIntervalException.class)
-        expect({ BoundlessInterval(DateTime(year: 4), null) }).toNotThrow(InvalidIntervalException.class)
-    }
+  test validIntervalBounds() {
+    expect({ BoundlessInterval() }).toNotThrow(InvalidIntervalException.class)
+    expect({ BoundlessInterval(DateTime(year: 5)) }).toNotThrow(InvalidIntervalException.class)
+    expect({ BoundlessInterval(end: DateTime(year: 5)) }).toNotThrow(InvalidIntervalException.class)
+    expect({ BoundlessInterval(null, DateTime(year: 5)) }).toNotThrow(InvalidIntervalException.class)
+    expect({ BoundlessInterval(DateTime(year: 4), null) }).toNotThrow(InvalidIntervalException.class)
+  }
 
-    test infiniteIntervalValues() {
-        let interval = Interval(null, DateTime(year: 5))
+  test infiniteIntervalValues() {
+    let interval = Interval(null, DateTime(year: 5))
 
-        expect({ interval.years }).toThrow(InfiniteIntervalException.class)
-    }
+    expect({ interval.years }).toThrow(InfiniteIntervalException.class)
+  }
 }

@@ -8,14 +8,14 @@ import "novex/nest/TestSuite"
 import static "novex/nest/Nest"
 
 testable class RedisStability {
-     var RedisConnection connection
+   var RedisConnection connection
 
 
 
-    [Test "Testing Redis get"]
-    testRedisGet() {
-        connection = RedisConnection()
+  [Test "Testing Redis get"]
+  testRedisGet() {
+    connection = RedisConnection()
 
 
-    }
+  }
 }

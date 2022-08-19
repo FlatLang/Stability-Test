@@ -1,10 +1,10 @@
 package "stabilitytest"
 
 class PolymorphicSuperClass implements PolymorphicSuperInterface {
-    visible var PolymorphicSubClass child
+  visible var PolymorphicSubClass child
 
-    visible Int myProperty => 1
+  visible Int myProperty => 1
 
-    public giveBirth() => child = PolymorphicSubClass()
-    public toString() => "super class"
+  public giveBirth() => child = PolymorphicSubClass()
+  public toString() => "super class"
 }
