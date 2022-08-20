@@ -76,6 +76,75 @@ testable class {
     expect(values[2]).toBe("3")
   }
 
+  test `HashMapIterator.next`() {
+    let map = HashMap<String, String>()
+      :add("one", "1")
+      :add("two", "2")
+      :add("three", "3")
+
+    let iterator = map.iterator
+
+    expect(iterator.next).toBe(Pair("one", "1"))
+
+    iterator.stepNext
+
+    expect(iterator.next).toBe(Pair("two", "2"))
+
+    iterator.stepNext
+
+    expect(iterator.next).toBe(Pair("three", "3"))
+
+    iterator.stepNext
+
+    expect(iterator.next).toBe(null)
+  }
+
+  test `HashMapIterator.current`() {
+    let map = HashMap<String, String>()
+      :add("one", "1")
+      :add("two", "2")
+      :add("three", "3")
+
+    let iterator = map.iterator
+
+    expect(iterator.current).toBe(null)
+
+    iterator.stepNext
+
+    expect(iterator.current).toBe(Pair("one", "1"))
+
+    iterator.stepNext
+
+    expect(iterator.current).toBe(Pair("two", "2"))
+
+    iterator.stepNext
+
+    expect(iterator.current).toBe(Pair("three", "3"))
+  }
+
+  test `HashMapIterator.previous`() {
+    let map = HashMap<String, String>()
+      :add("one", "1")
+      :add("two", "2")
+      :add("three", "3")
+
+    let iterator = map.iterator
+
+    expect(iterator.previous).toBe(null)
+
+    iterator.stepNext
+
+    expect(iterator.previous).toBe(null)
+
+    iterator.stepNext
+
+    expect(iterator.previous).toBe(Pair("one", "1"))
+
+    iterator.stepNext
+
+    expect(iterator.previous).toBe(Pair("two", "2"))
+  }
+
   test `ArrayIterator.next`() {
     let array = ["one", "two", "three"]
     let iterator = array.iterator
