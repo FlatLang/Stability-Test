@@ -44,4 +44,11 @@ testable class {
 
     expect(value).toBe("hey " + '#' + "there\n" + '#' + "{test} aoeu\n" + '#' + "aoeeeee")
   }
+
+  test `handles both escaped and unescaped hashtag`() {
+    let test = "yo"
+    let value = "hey \#there #{1 + 1} \#bob #{test} #5 aeou"
+
+    expect(value).toBe("hey " + '#' + "there 2 " + '#' + "bob yo 5 aeou")
+  }
 }
