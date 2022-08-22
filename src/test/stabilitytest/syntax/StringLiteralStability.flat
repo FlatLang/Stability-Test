@@ -28,4 +28,20 @@ testable class {
 
     expect(value).toBe("hey " + '`' + "there" + '`' + "\n`" + "test" + '`' + " aoeu\n" + '`' + "aoeeeee" + '`' + "\n" + '`' + "" + '`')
   }
+
+  test `handles escaped hashtag`() {
+    let value = "hey \#there bob"
+
+    expect(value).toBe("hey " + '#' + "there bob")
+  }
+
+  test `handles multi-line escaped hashtag`() {
+    let value = "|
+      hey \#there
+      \#{test} aoeu
+      \#aoeeeee
+      |"
+
+    expect(value).toBe("hey " + '#' + "there\n" + '#' + "{test} aoeu\n" + '#' + "aoeeeee")
+  }
 }
