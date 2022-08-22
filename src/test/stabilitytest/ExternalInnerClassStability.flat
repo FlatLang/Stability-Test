@@ -5,8 +5,6 @@ import stabilitytest/InnerClassStability.MyInner
 import novex/nest/Nest
 import novex/nest/TestSuite
 
-import static novex/nest/Nest
-
 testable class ExternalInnerClassStability {
   [Test "Testing external inner class access"]
   public test() {

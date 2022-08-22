@@ -8,8 +8,6 @@ import flatlang/time/Time
 import novex/nest/Nest
 import novex/nest/TestSuite
 
-import static novex/nest/Nest
-
 testable class {
   static final String inputString = "This is test input..."
 

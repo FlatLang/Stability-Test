@@ -8,8 +8,6 @@ import flatlang/thread/Thread
 import novex/nest/Nest
 import novex/nest/TestSuite
 
-import static novex/nest/Nest
-
 testable class TimeStability {
   [Test "Testing Time.nova"]
   public async test() {

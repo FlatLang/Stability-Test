@@ -6,8 +6,6 @@ import "flatlang/datastruct/HashMap"
 import "novex/nest/Nest"
 import "novex/nest/TestSuite"
 
-import static "novex/nest/Nest"
-
 testable class {
   test `basic string iterator with explicit type declarations`() {
     String[] list = ["this", "is", "a", "test", "to", "see", "what shows up"]

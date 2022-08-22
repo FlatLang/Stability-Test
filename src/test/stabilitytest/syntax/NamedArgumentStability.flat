@@ -5,13 +5,11 @@ import "flatlang/datastruct/list/Iterator"
 import "novex/nest/Nest"
 import "novex/nest/TestSuite"
 
-import static "novex/nest/Nest"
-
 testable class {
   basicSingle(
     String: test
   ) => test + "single"
-  
+
   test `single named argument`() {
     expect(basicSingle(test: "bob")).toBe("bobsingle")
   }

@@ -7,8 +7,6 @@ import flatlang/regex/Pattern
 import novex/nest/Nest
 import novex/nest/TestSuite
 
-import static novex/nest/Nest
-
 testable class {
   test `regex containsMatch can find valid match`() {
     expect(Regex.containsMatch(/a[bd]c/, "hello adc goodbye")).toBe(true, "Failed to find valid match")

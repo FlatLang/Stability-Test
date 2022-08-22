@@ -11,8 +11,6 @@ import flatlang/thread/Thread
 import novex/nest/Nest
 import novex/nest/TestSuite
 
-import static novex/nest/Nest
-
 testable class BoundedIntervalStability {
   test invalidUnboundedIntervalBounds() {
     expect({ BoundedInterval(null, null) }).toThrow(InvalidIntervalException.class)

@@ -6,8 +6,6 @@ import flatlang/io/StringBuilder
 import novex/nest/Nest
 import novex/nest/TestSuite
 
-import static novex/nest/Nest
-
 testable class FancyOutputStreamTests {
   var FancyOutputStream stream
   var StringBuilder builder

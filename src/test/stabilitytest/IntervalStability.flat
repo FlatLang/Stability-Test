@@ -10,8 +10,6 @@ import flatlang/thread/Thread
 import novex/nest/Nest
 import novex/nest/TestSuite
 
-import static novex/nest/Nest
-
 testable class IntervalStability {
   test threeHourInterval() {
     let interval = Interval(DateTime(year: 2017, month: 3, dayOfMonth: 27, hour: 5), DateTime(year: 2017, month: 3, dayOfMonth: 27, hour: 8))
