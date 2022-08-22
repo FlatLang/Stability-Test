@@ -1,0 +1,31 @@
+package stabilitytest/syntax
+
+import novex/nest/Nest
+import novex/nest/TestSuite
+
+import static novex/nest/Nest
+
+testable class {
+  test `plain string`() {
+    let value = "hey there"
+
+    expect(value).toBe("hey there")
+  }
+
+  test `handles tick marks surrounding text`() {
+    let value = "hey `there`"
+
+    expect(value).toBe("hey " + '`' + "there" + '`')
+  }
+
+  test `handles multi-line tick marks surrounding text`() {
+    let value = "|
+      hey `there`
+      `test` aoeu
+      `aoeeeee`
+      ``
+      |"
+
+    expect(value).toBe("hey " + '`' + "there" + '`' + "\n`" + "test" + '`' + " aoeu\n" + '`' + "aoeeeee" + '`' + "\n" + '`' + "" + '`')
+  }
+}

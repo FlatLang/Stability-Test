@@ -17,6 +17,7 @@ import stabilitytest/syntax/LiteralFieldNamesStability
 import stabilitytest/syntax/UnaryOperatorStability
 import stabilitytest/syntax/IteratorStability
 import stabilitytest/syntax/NamedArgumentStability
+import stabilitytest/syntax/StringLiteralStability
 import stabilitytest/syntax/MultilineStringLiteralStability
 
 [TestSuite [
@@ -48,6 +49,7 @@ import stabilitytest/syntax/MultilineStringLiteralStability
   EqualsStability,
   RegexStability,
   NamedArgumentStability,
+  StringLiteralStability,
   MultilineStringLiteralStability
 ]]
 [TargetRuntime not browser]
