@@ -8,17 +8,19 @@
   "scripts": {
     "test": "node dist/test.js"
   },
-  "test": {
-    "mainClass": "stabilitytest/StabilityTest",
-    "outDirectory": "dist",
-    "source": "src",
-    "dependencies": {
-      "github:FlatLang/Standard-Library": "master",
-      "github:FlatLang/Nest": "master",
-      "github:FlatLang/System": "master",
-      "github:FlatLang/IO": "master",
-      "github:FlatLang/Network": "master",
-      "github:FlatLang/Redis": "master"
+  "sources": {
+    "test": {
+      "mainClass": "stabilitytest/StabilityTest",
+      "outDirectory": "dist",
+      "source": "src",
+      "dependencies": {
+        "github:FlatLang/Standard-Library": "master",
+        "github:FlatLang/Nest": "master",
+        "github:FlatLang/System": "master",
+        "github:FlatLang/IO": "master",
+        "github:FlatLang/Network": "master",
+        "github:FlatLang/Redis": "master"
+      }
     }
   }
 }
