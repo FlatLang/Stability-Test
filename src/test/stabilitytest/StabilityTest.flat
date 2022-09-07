@@ -19,6 +19,7 @@ import stabilitytest/syntax/IteratorStability
 import stabilitytest/syntax/NamedArgumentStability
 import stabilitytest/syntax/StringLiteralStability
 import stabilitytest/syntax/MultilineStringLiteralStability
+import stabilitytest/syntax/LazyStability
 
 [TestSuite [
   ExceptionStability,
@@ -50,7 +51,8 @@ import stabilitytest/syntax/MultilineStringLiteralStability
   RegexStability,
   NamedArgumentStability,
   StringLiteralStability,
-  MultilineStringLiteralStability
+  MultilineStringLiteralStability,
+  LazyStability
 ]]
 [TargetRuntime not browser]
 [TestSuite [
