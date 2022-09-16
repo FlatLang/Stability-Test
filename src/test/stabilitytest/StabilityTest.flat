@@ -20,6 +20,7 @@ import stabilitytest/syntax/NamedArgumentStability
 import stabilitytest/syntax/StringLiteralStability
 import stabilitytest/syntax/MultilineStringLiteralStability
 import stabilitytest/syntax/LazyStability
+import stabilitytest/syntax/DataClassStability
 
 [TestSuite [
   ExceptionStability,
@@ -52,7 +53,8 @@ import stabilitytest/syntax/LazyStability
   NamedArgumentStability,
   StringLiteralStability,
   MultilineStringLiteralStability,
-  LazyStability
+  LazyStability,
+  DataClassStability
 ]]
 [TargetRuntime not browser]
 [TestSuite [

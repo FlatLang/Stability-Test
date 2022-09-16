@@ -1,0 +1,92 @@
+package stabilitytest/syntax
+
+import novex/nest/Nest
+import novex/nest/TestSuite
+
+testable class {
+  data class InnerTestClass {
+    public construct(
+      visible String one,
+      visible Int two,
+      visible List three
+    ) {}
+  }
+
+  test `can create outer data class`() {
+    let value = OuterTestClass(
+      "one",
+      2,
+      Array<String>():add("three")
+    )
+
+    expect(value).toNotBe(null)
+    expect(value.one).toBe("one")
+    expect(value.two).toBe(2)
+    expect(value.three).toBe(["three"])
+  }
+
+  test `can copy outer data class`() {
+    let value = OuterTestClass(
+      "one",
+      2,
+      Array<String>():add("three")
+    )
+
+    let copy = value.copy(
+      two: 4
+    )
+
+    expect(value).toNotBe(null)
+    expect(value.one).toBe("one")
+    expect(value.two).toBe(2)
+    expect(value.three).toBe(["three"])
+
+    expect(copy).toNotBe(null)
+    expect(copy.one).toBe("one")
+    expect(copy.two).toBe(4)
+    expect(copy.three).toBe(["three"])
+  }
+
+  test `can create inner data class`() {
+    let value = InnerTestClass(
+      "one",
+      2,
+      Array<String>():add("three")
+    )
+
+    expect(value).toNotBe(null)
+    expect(value.one).toBe("one")
+    expect(value.two).toBe(2)
+    expect(value.three).toBe(["three"])
+  }
+
+  test `can copy inner data class`() {
+    let value = InnerTestClass(
+      "one",
+      2,
+      Array<String>():add("three")
+    )
+
+    let copy = value.copy(
+      two: 4
+    )
+
+    expect(value).toNotBe(null)
+    expect(value.one).toBe("one")
+    expect(value.two).toBe(2)
+    expect(value.three).toBe(["three"])
+
+    expect(copy).toNotBe(null)
+    expect(copy.one).toBe("one")
+    expect(copy.two).toBe(4)
+    expect(copy.three).toBe(["three"])
+  }
+}
+
+data class OuterTestClass {
+  public construct(
+    visible String one,
+    visible Int two,
+    visible List three
+  ) {}
+}
