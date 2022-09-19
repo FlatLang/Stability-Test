@@ -1,9 +1,9 @@
 package stabilitytest
 
-import flatlang/time/Timer
-import flatlang/thread/Thread
-import flatlang/io/File
-import flatlang/io/FancyOutputStream
+import flat/time/Timer
+import flat/thread/Thread
+import flat/io/File
+import flat/io/FancyOutputStream
 
 import novex/nest/TestResult
 

@@ -1,8 +1,8 @@
 package stabilitytest
 
-import flatlang/regex/Regex
-import flatlang/regex/Match
-import flatlang/regex/Pattern
+import flat/regex/Regex
+import flat/regex/Match
+import flat/regex/Pattern
 
 import novex/nest/Nest
 import novex/nest/TestSuite

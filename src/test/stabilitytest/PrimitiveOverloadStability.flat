@@ -1,6 +1,6 @@
 package stabilitytest
 
-import flatlang/datastruct/HashMap
+import flat/datastruct/HashMap
 
 import novex/nest/Nest
 import novex/nest/TestSuite

@@ -2,7 +2,7 @@ package stabilitytest
 
 import novex/nest/Nest
 import novex/nest/TestSuite
-import static flatlang/Math
+import static flat/Math
 
 testable class StaticImportStability {
   [Test "Testing math static imports"]

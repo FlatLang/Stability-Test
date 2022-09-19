@@ -1,12 +1,12 @@
 package stabilitytest
 
-import flatlang/time/Timer
-import flatlang/time/DateTime
-import flatlang/time/DateTime.InvalidDateException
-import flatlang/time/Interval
-import flatlang/time/BoundedInterval
-import flatlang/time/Interval.InvalidIntervalException
-import flatlang/thread/Thread
+import flat/time/Timer
+import flat/time/DateTime
+import flat/time/DateTime.InvalidDateException
+import flat/time/Interval
+import flat/time/BoundedInterval
+import flat/time/Interval.InvalidIntervalException
+import flat/thread/Thread
 
 import novex/nest/Nest
 import novex/nest/TestSuite

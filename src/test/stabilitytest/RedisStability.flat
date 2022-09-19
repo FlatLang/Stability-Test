@@ -1,6 +1,6 @@
 package stabilitytest
 
-import flatlang/redis/RedisConnection
+import flat/redis/RedisConnection
 
 import novex/nest/Nest
 import novex/nest/TestSuite

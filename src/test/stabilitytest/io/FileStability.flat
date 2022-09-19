@@ -1,9 +1,9 @@
 package stabilitytest/io
 
-import flatlang/io/File
-import flatlang/io/FileReader
-import flatlang/io/FileWriter
-import flatlang/time/Time
+import flat/io/File
+import flat/io/FileReader
+import flat/io/FileWriter
+import flat/time/Time
 
 import novex/nest/Nest
 import novex/nest/TestSuite

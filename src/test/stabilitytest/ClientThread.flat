@@ -1,8 +1,8 @@
 package stabilitytest
 
-import flatlang/io/OutputStream
-import flatlang/network/ClientSocket
-import flatlang/thread/Thread
+import flat/io/OutputStream
+import flat/network/ClientSocket
+import flat/thread/Thread
 
 import novex/nest/Nest
 import novex/nest/TestSuite
