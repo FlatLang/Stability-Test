@@ -84,9 +84,9 @@ testable class {
 
   data class SubInnerTestClass extends InnerTestClass {
     public construct(
-      visible String one,
-      visible Int two,
-      visible List three,
+      String one,
+      Int two,
+      List three,
       visible String four,
       visible Int five,
       visible List six
