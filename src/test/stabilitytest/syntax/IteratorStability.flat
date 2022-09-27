@@ -199,4 +199,80 @@ testable class {
 
     expect(iterator.previous).toBe("two")
   }
+
+  test `ArrayIterator.allNext`() {
+    let array = ["one", "two", "three"]
+    let iterator = array.iterator
+
+    expect(iterator.allNext).toBe(["one", "two", "three"])
+
+    iterator.stepNext
+
+    expect(iterator.allNext).toBe(["two", "three"])
+
+    iterator.stepNext
+
+    expect(iterator.allNext).toBe(["three"])
+
+    iterator.stepNext
+
+    expect(iterator.allNext).toBe(Array())
+  }
+
+  test `ArrayIterator.allPrevious`() {
+    let array = ["one", "two", "three"]
+    let iterator = array.iterator
+
+    expect(iterator.allPrevious).toBe(Array())
+
+    iterator.stepNext
+
+    expect(iterator.allPrevious).toBe(["one"])
+
+    iterator.stepNext
+
+    expect(iterator.allPrevious).toBe(["one", "two"])
+
+    iterator.stepNext
+
+    expect(iterator.allPrevious).toBe(["one", "two", "three"])
+  }
+
+  test `ArrayIterator.allNextInclusive`() {
+    let array = ["one", "two", "three"]
+    let iterator = array.iterator
+
+    expect(iterator.allNextInclusive).toBe(["one", "two", "three"])
+
+    iterator.stepNext
+
+    expect(iterator.allNextInclusive).toBe(["one", "two", "three"])
+
+    iterator.stepNext
+
+    expect(iterator.allNextInclusive).toBe(["two", "three"])
+
+    iterator.stepNext
+
+    expect(iterator.allNextInclusive).toBe(["three"])
+  }
+
+  test `ArrayIterator.allPreviousInclusive`() {
+    let array = ["one", "two", "three"]
+    let iterator = array.iterator
+
+    expect(iterator.allPreviousInclusive).toBe(["one"])
+
+    iterator.stepNext
+
+    expect(iterator.allPreviousInclusive).toBe(["one", "two"])
+
+    iterator.stepNext
+
+    expect(iterator.allPreviousInclusive).toBe(["one", "two", "three"])
+
+    iterator.stepNext
+
+    expect(iterator.allPreviousInclusive).toBe(["one", "two", "three"])
+  }
 }
