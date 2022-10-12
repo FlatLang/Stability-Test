@@ -7,20 +7,8 @@ import flat/io/FancyOutputStream
 
 import novex/nest/TestResult
 
-import stabilitytest/io/FileStability
-
-import stabilitytest/syntax/IfStatementStability
-import stabilitytest/syntax/ElseStatementStability
-import stabilitytest/syntax/ElseIfStatementStability
-import stabilitytest/syntax/LiteralMethodNamesStability
-import stabilitytest/syntax/LiteralFieldNamesStability
-import stabilitytest/syntax/UnaryOperatorStability
-import stabilitytest/syntax/IteratorStability
-import stabilitytest/syntax/NamedArgumentStability
-import stabilitytest/syntax/StringLiteralStability
-import stabilitytest/syntax/MultilineStringLiteralStability
-import stabilitytest/syntax/LazyStability
-import stabilitytest/syntax/DataClassStability
+import stabilitytest/io
+import stabilitytest/syntax
 
 [TestSuite [
   ExceptionStability,
