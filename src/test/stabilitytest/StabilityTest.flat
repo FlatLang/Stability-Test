@@ -60,7 +60,7 @@ class StabilityTest {
 
     Timer timer = Timer().start()
 
-    let results = new TestResult[]
+    let results = TestResult[]
 
     let suites = args.skip(2)
 
