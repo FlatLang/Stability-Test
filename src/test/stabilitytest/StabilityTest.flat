@@ -55,7 +55,7 @@ import stabilitytest/syntax
   ThreadStability
 ]]
 class StabilityTest {
-  public static async main(String args[]) {
+  public static async main(String[] args) {
     let test = StabilityTest()
 
     Timer timer = Timer().start()
