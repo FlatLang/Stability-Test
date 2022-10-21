@@ -1,6 +1,6 @@
 package stabilitytest
 
-public abstract class StabilityTestCase {
+abstract class StabilityTestCase {
   visible StabilityTest program
 
   public construct(StabilityTest program) => this.program = program
