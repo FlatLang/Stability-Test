@@ -1,9 +1,9 @@
-package "stabilitytest/syntax"
+package stabilitytest/syntax
 
-import "flat/datastruct/list/Iterator"
+import flat/datastruct/list/Iterator
 
-import "novex/nest/Nest"
-import "novex/nest/TestSuite"
+import novex/nest/Nest
+import novex/nest/TestSuite
 
 testable class IfStatementStability {
   test `basic if statement with scope`() {

@@ -1,10 +1,10 @@
-package "stabilitytest/syntax"
+package stabilitytest/syntax
 
-import "flat/datastruct/list/Iterator"
-import "flat/datastruct/HashMap"
+import flat/datastruct/list/Iterator
+import flat/datastruct/HashMap
 
-import "novex/nest/Nest"
-import "novex/nest/TestSuite"
+import novex/nest/Nest
+import novex/nest/TestSuite
 
 testable class {
   test `basic string iterator with explicit type declarations`() {
