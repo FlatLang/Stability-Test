@@ -9,9 +9,9 @@ import novex/nest/Nest
 import novex/nest/TestSuite
 
 testable class {
-  static final String inputString = "This is test input..."
+  static String inputString = "This is test input..."
 
-  static final Int lines = 100
+  static Int lines = 100
 
   var File f
   var FileWriter writer

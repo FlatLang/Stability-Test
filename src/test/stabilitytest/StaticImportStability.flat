@@ -5,8 +5,7 @@ import novex/nest/TestSuite
 import static flat/Math
 
 testable class StaticImportStability {
-  [Test "Testing math static imports"]
-  public test() {
+  test `math static imports`() {
     expect(abs(-5)).toBe(5, "Did not call abs correctly")
     expect(max(-5, -6)).toBe(-5, "Did not call max correctly")
     expect(min(-5, -6)).toBe(-6, "Did not call min correctly")

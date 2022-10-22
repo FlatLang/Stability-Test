@@ -4,8 +4,7 @@ import novex/nest/Nest
 import novex/nest/TestSuite
 
 testable class InnerClassStability {
-  [Test "Checking inner classes"]
-  public test() {
+  test `inner classes`() {
     let instance = MyInner(3, 5)
 
     expect(instance.x == 3 && instance.y == 5).toBe(true, "did not set values correctly")

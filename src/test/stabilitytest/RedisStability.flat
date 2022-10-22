@@ -8,10 +8,7 @@ import novex/nest/TestSuite
 testable class RedisStability {
    var RedisConnection connection
 
-
-
-  [Test "Testing Redis get"]
-  testRedisGet() {
+  test `Redis get`() {
     connection = RedisConnection()
 
 

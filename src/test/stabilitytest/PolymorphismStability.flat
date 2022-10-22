@@ -4,8 +4,7 @@ import novex/nest/Nest
 import novex/nest/TestSuite
 
 testable class PolymorphismStability {
-  [Test "Testing polymorphic method calls"]
-  testCalls() {
+  test `polymorphic method calls`() {
     PolymorphicSuperClass superClass = PolymorphicSuperClass()
     PolymorphicSubClass   subClass = PolymorphicSubClass()
 
@@ -14,8 +13,7 @@ testable class PolymorphismStability {
 
   static testSubCall(PolymorphicSuperClass obj) => obj.toString() == "sub class"
 
-  [Test "Testing polymorphic closure method calls"]
-  testClosure() {
+  test `polymorphic closure method calls`() {
     PolymorphicSuperClass obj = PolymorphicSubClass()
 
     expect(callPolymorphicClosure(obj.toString)).toBe(true, "Did not call sub class method as closure")
@@ -29,8 +27,7 @@ testable class PolymorphismStability {
 
   static callPolymorphicClosure(closure() -> String) => closure() == "sub class"
 
-  [Test "Testing polymorphic properties"]
-  testProperty() {
+  test `polymorphic properties`() {
     PolymorphicSuperClass superClass = PolymorphicSuperClass()
     PolymorphicSuperClass subClass = PolymorphicSubClass()
 
@@ -38,8 +35,7 @@ testable class PolymorphismStability {
     expect(subClass.myProperty == 2).toBe(true, "Did not call sub polymorphic property accessor correctly")
   }
 
-  [Test "Testing isOfType"]
-  testIsOfType() {
+  test `isOfType`() {
     PolymorphicSuperClass superClass = PolymorphicSuperClass()
     PolymorphicSuperClass subClass = PolymorphicSubClass()
 

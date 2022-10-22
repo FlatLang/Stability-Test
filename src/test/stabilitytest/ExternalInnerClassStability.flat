@@ -6,8 +6,7 @@ import novex/nest/Nest
 import novex/nest/TestSuite
 
 testable class ExternalInnerClassStability {
-  [Test "Testing external inner class access"]
-  public test() {
+  test `external inner klass access`() {
     let instance = MyInner(3, 5)
 
     // [ExpectCompileError InvalidAccessError]

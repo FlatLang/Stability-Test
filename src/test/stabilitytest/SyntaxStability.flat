@@ -6,8 +6,7 @@ import novex/nest/Nest
 import novex/nest/TestSuite
 
 testable class SyntaxStability {
-  [Test "Testing simple match statement"]
-  testSimpleMatchStatement() {
+  test `simple match statement`() {
     let num  = 3
     var worked = false
 
@@ -22,8 +21,7 @@ testable class SyntaxStability {
     expect(worked).toBe(true)
   }
 
-  [Test "Testing simple match statement with indentation"]
-  testSimpleMatchStatementWithIndentation() {
+  test `simple match statement with indentation`() {
     let num  = 3
     var worked = false
 
@@ -41,8 +39,7 @@ testable class SyntaxStability {
     expect(worked).toBe(true)
   }
 
-  [Test "Testing simple match statement with scopes"]
-  testSimpleMatchStatementWithScopes() {
+  test `simple match statement with scopes`() {
     let num  = 3
     var worked = false
 
@@ -67,8 +64,7 @@ testable class SyntaxStability {
     expect(worked).toBe(true)
   }
 
-  [Test "Testing match statement with variable case values"]
-  testMatchStatementWithVariableCaseValues() {
+  test `match statement with variable case values`() {
     var val  = 1
     var num  = 3
     var worked = false
@@ -91,8 +87,7 @@ testable class SyntaxStability {
     expect(worked).toBe(true)
   }
 
-  [Test "Testing match statement with variable case values and fallthrough"]
-  testMatchStatementWithVariableCaseValuesAndFallthrough() {
+  test `match statement with variable case values and fallthrough`() {
     var val  = 1
     var num  = 3
     var worked = false
@@ -117,8 +112,7 @@ testable class SyntaxStability {
     expect(worked && worked2).toBe(true)
   }
 
-  [Test "Testing inline while loop"]
-  testWhileLoops() {
+  test `inline while loop`() {
     var num  = 0
     var num2 = 0
     var num3 = 0
@@ -137,8 +131,7 @@ testable class SyntaxStability {
     expect(num == 100 && num2 == 100 && num3 == 100).toBe(true, "Inline while loop failed.")
   }
 
-  [Test "Testing inline for loop"]
-  testForLoops() {
+  test `inline for loop`() {
     var num  = 0
     var num2 = 0
     var num3 = 0
@@ -157,8 +150,7 @@ testable class SyntaxStability {
     expect(num == 100 && num2 == 100 && num3 == 100).toBe(true, "Inline for loop failed. Expected 100, 100, 100 received #{num}, #{num2}, #{num3}")
   }
 
-  [Test "Testing until statement"]
-  testUntil() {
+  test `until statement`() {
     var obj
 
     until (obj) {
@@ -199,8 +191,7 @@ testable class SyntaxStability {
     }
   }
 
-  [Test "Testing filter functionality"]
-  testFilterFunctionality() {
+  test `filter functionality`() {
     String[] list = ["this", "is", "a", "test", "to", "see", "what shows up"]
     String[] list2 = list.filter(filterFunc)
 
@@ -222,8 +213,7 @@ testable class SyntaxStability {
     }*/
   }
 
-  [Test "Testing foreach loop functionality"]
-  testForeachLoopFunctionality() {
+  test `foreach loop functionality`() {
     String[] list = ["this", "is", "a", "test", "to", "see", "what shows up"]
     String[] list2 = list.filter(filterFunc)
 
@@ -232,8 +222,7 @@ testable class SyntaxStability {
     }
   }
 
-  [Test "Testing ternary functionality"]
-  testTernary() {
+  test `ternary functionality`() {
     var first = trueValue() ? "hey" == "hey" : "hey" == "hey2"
 
     expect(first).toBe(true, "Failed first ternary test")
@@ -243,8 +232,7 @@ testable class SyntaxStability {
     expect(second == "two").toBe(true, "Failed second ternary test")
   }
 
-  [Test "Testing elvis functionality"]
-  testElvis() {
+  test `elvis functionality`() {
     var str = "this isnt null"
     String str2 = null
 
@@ -315,8 +303,7 @@ testable class SyntaxStability {
     return num * arg.count + add
   }
 
-  [Test "Testing named arguments"]
-  testNamedArguments() {
+  test `named arguments`() {
     var num = named("", arg: "yo", num: 4)
 
     expect(num == 8).toBe(true, "Default argument failed. Expected 8, received #num")
@@ -335,14 +322,12 @@ testable class SyntaxStability {
 
   myFunc(something(Int) -> Int = func2) => something(5)
 
-  [Test "Testing default closure arguments"]
-  checkDefaultClosureArguments() {
+  test `default closure arguments`() {
   	expect(myFunc() == 20).toBe(true, "Failed to call default closure")
   	expect(myFunc(func1) == 10).toBe(true, "Failed to call overrided default closure")
   }
 
-  [Test "Testing zip function"]
-  checkZipper() { // lol
+  test `zipper`() { // lol
     var array1 = ["This", "is", "a", "test"]
     var array2 = ["one", "two", "three", "four"]//[1, 2, 4, 3]
 
@@ -350,8 +335,7 @@ testable class SyntaxStability {
     out.write("Zipped: #zipped ")
   }
 
-  [Test "Testing safe navigation operator"]
-  testSafeNavigation() {
+  test `safe navigation operator`() {
     var node = Node()
     node.value = 1
 
@@ -393,8 +377,7 @@ testable class SyntaxStability {
     }
   }
 
-  [Test "Testing array safe navigation"]
-  testArraySafeNavigation() {
+  test `array safe navigation`() {
   	/*var myArray = [0, 1, 2, 3, 4, 5, 6]
 
   	program.fail("Failed to access valid index with safe navigation", myArray?[4] != 4)

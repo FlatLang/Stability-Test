@@ -10,8 +10,7 @@ testable class ClosureStability {
 
   incrementNumber() => number++
 
-  [Test "Testing static math closures"]
-  testMathClosures() {
+  test `static math closures`() {
     Int a = 5
     Int b = 3
 
@@ -24,8 +23,7 @@ testable class ClosureStability {
     expect(mathClosure(Math.tan, value) - Math.tan(value) < TOLERANCE).toBe(true, "Failed to call Math.tan(Double) closure")
   }
 
-  [Test "Testing instance closures"]
-  testInstanceClosure() {
+  test `instance closures`() {
     ClosureStability c = ClosureStability()
 
     instanceClosure(c.incrementNumber)

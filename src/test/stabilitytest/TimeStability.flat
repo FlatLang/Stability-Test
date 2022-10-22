@@ -9,8 +9,7 @@ import novex/nest/Nest
 import novex/nest/TestSuite
 
 testable class TimeStability {
-  [Test "Testing Time.nova"]
-  public async test() {
+  async test `can sleep for 100ms`() {
     let timer = Timer()
     timer.start()
 
