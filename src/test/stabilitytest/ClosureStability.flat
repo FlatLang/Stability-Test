@@ -4,7 +4,7 @@ import novex/nest/Nest
 import novex/nest/TestSuite
 
 testable class ClosureStability {
-  static final Double TOLERANCE = 0.0000000001
+  static Double TOLERANCE = 0.0000000001
 
   var Int number
 
