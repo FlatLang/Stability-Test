@@ -4,8 +4,7 @@ import novex/nest/Nest
 import novex/nest/TestSuite
 
 testable class ExceptionStability {
-  [Test message: false]
-  public test() {
+  test `Testing exceptions`() {
     expect({ testException(out) }).toThrow(Exception.class, "Failed to catch exception")
 
     var worked = false
