@@ -7,7 +7,8 @@ import novex/nest/TestSuite
 
 testable class FirstClassFunctionStability {
   var Bool funcSwitch = false
-  var Int funcCount, chainCount
+  var Int funcCount
+  var Int chainCount
 
   test `calling a function returned by a function`() {
     let func = getFunc()
