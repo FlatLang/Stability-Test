@@ -6,8 +6,7 @@ import novex/nest/Nest
 import novex/nest/TestSuite
 
 testable class ThreadStability {
-  [Test "Testing 20 Threads with memory access"]
-  public async test() {
+  public async `handles 20 Threads with memory access`() {
     ThreadImplementation[] threads = Array(20)
 
     createThreads(threads, 20)
