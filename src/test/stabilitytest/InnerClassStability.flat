@@ -16,7 +16,7 @@ testable class InnerClassStability {
 }
 
 private class MyOuter {
-  public test() {
+  public testFunc() {
     let instance = MyInner(4, 6)
 
     // [ExpectCompileError InvalidAccessError]
