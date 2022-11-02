@@ -483,6 +483,68 @@ testable class {
     expect(copy.five).toBe(5)
     expect(copy.six).toBe(["seven"])
   }
+
+  test `can create dataclass with generics`() {
+    let value = OuterTestClassWithGenerics<String>(
+      one: "one",
+      two: 2,
+      three: Array<String>():add("three")
+    )
+
+    expect(value).toNotBe(null)
+    expect(value.one).toBe("one")
+    expect(value.two).toBe(2)
+    expect(value.three).toBe(["three"])
+  }
+
+  test `can copy dataclass with generics`() {
+    let value = OuterTestClassWithGenerics<String>(
+      one: "one",
+      two: 2,
+      three: Array<String>():add("three")
+    )
+
+    let copy = value.copy(
+      two: 4,
+      three: Array<String>():add("seven")
+    )
+
+    expect(value).toNotBe(null)
+    expect(value.one).toBe("one")
+    expect(value.two).toBe(2)
+    expect(value.three).toBe(["three"])
+
+    expect(copy).toNotBe(null)
+    expect(copy.one).toBe("one")
+    expect(copy.two).toBe(4)
+    expect(copy.three).toBe(["seven"])
+  }
+
+  test `can copyTo dataclass with generics`() {
+    let value = OuterTestClassWithGenerics<String>(
+      one: "one",
+      two: 2,
+      three: Array<String>():add("three")
+    )
+
+    let initial = OuterTestClassWithGenerics<String>()
+
+    let copy = value.copyTo(
+      initial,
+      two: 4,
+      three: Array<String>():add("seven")
+    )
+
+    expect(value).toNotBe(null)
+    expect(value.one).toBe("one")
+    expect(value.two).toBe(2)
+    expect(value.three).toBe(["three"])
+
+    expect(copy).toNotBe(null)
+    expect(copy.one).toBe("one")
+    expect(copy.two).toBe(4)
+    expect(copy.three).toBe(["seven"])
+  }
 }
 
 data class OuterTestClass {
@@ -495,6 +557,12 @@ data class OuterTestClass {
 
 data class OuterTestClassWithoutConstructor {
   visible String one
+  visible Int two
+  visible List three
+}
+
+data class OuterTestClassWithGenerics<Type> {
+  visible Type one
   visible Int two
   visible List three
 }
