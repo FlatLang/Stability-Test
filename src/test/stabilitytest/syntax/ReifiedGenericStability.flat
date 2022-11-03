@@ -1,0 +1,39 @@
+package stabilitytest/syntax
+
+import flat/datastruct
+
+import novex/nest/Nest
+import novex/nest/TestSuite
+
+testable class {
+  test `can access single explicit generic parameter type`() {
+    expect(SingleTest<String>().getClass()).toBe(String.class)
+  }
+
+  test `can access single default generic parameter type`() {
+    expect(SingleTest().getClass()).toBe(Object.class)
+  }
+
+  test `can access two explicit generic parameter types`() {
+    let value = DoubleTest<String, HashMap>()
+
+    expect(value.getClass1()).toBe(String.class)
+    expect(value.getClass2()).toBe(HashMap.class)
+  }
+
+  test `can access one explicit generic parameter type and one default`() {
+    let value = DoubleTest<String>()
+
+    expect(value.getClass1()).toBe(String.class)
+    expect(value.getClass2()).toBe(Object.class)
+  }
+}
+
+class SingleTest<reified GenType> {
+  public getClass() => GenType.class
+}
+
+class DoubleTest<reified GenType, reified GenType2> {
+  public getClass1() => GenType.class
+  public getClass2() => GenType2.class
+}

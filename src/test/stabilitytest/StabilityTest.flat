@@ -42,7 +42,8 @@ import stabilitytest/syntax
   StringLiteralStability,
   MultilineStringLiteralStability,
   LazyStability,
-  DataClassStability
+  DataClassStability,
+  ReifiedGenericStability
 ]]
 [TargetRuntime not browser]
 [TestSuite [
