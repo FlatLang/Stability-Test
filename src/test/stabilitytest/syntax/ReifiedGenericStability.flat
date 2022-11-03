@@ -27,6 +27,14 @@ testable class {
     expect(value.getClass1()).toBe(String.class)
     expect(value.getClass2()).toBe(Object.class)
   }
+
+  test `can access single explicit sub-class generic parameter type`() {
+    expect(Subclass<String>().getClass()).toBe(String.class)
+  }
+
+  test `can access single sub-class default generic parameter type`() {
+    expect(Subclass().getClass()).toBe(Object.class)
+  }
 }
 
 class SingleTest<reified GenType> {
@@ -37,3 +45,5 @@ class DoubleTest<reified GenType, reified GenType2> {
   public getClass1() => GenType.class
   public getClass2() => GenType2.class
 }
+
+class Subclass<GenType> extends SingleTest<GenType> {}
