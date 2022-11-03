@@ -35,15 +35,27 @@ testable class {
   test `can access single sub-class default generic parameter type`() {
     expect(Subclass().getClass()).toBe(Object.class)
   }
+
+  test `can access two explicit generic parameter types after data copy`() {
+    let value = DataTest<String, HashMap>().copy()
+
+    expect(value.getClass1()).toBe(String.class)
+    expect(value.getClass2()).toBe(HashMap.class)
+  }
 }
 
 class SingleTest<reified GenType> {
   public getClass() => GenType.class
 }
 
-class DoubleTest<reified GenType, reified GenType2> {
-  public getClass1() => GenType.class
+class DoubleTest<reified GenType1, reified GenType2> {
+  public getClass1() => GenType1.class
   public getClass2() => GenType2.class
 }
 
 class Subclass<GenType> extends SingleTest<GenType> {}
+
+data class DataTest<reified GenType1, reified GenType2> {
+  public getClass1() => GenType1.class
+  public getClass2() => GenType2.class
+}
