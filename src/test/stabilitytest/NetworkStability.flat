@@ -5,8 +5,8 @@ import flat/network/ClientSocket
 import flat/network/ConnectionSocket
 import flat/thread/Thread
 
-import novex/nest/Nest
-import novex/nest/TestSuite
+import flat/test/Test
+import flat/test/TestSuite
 
 testable class NetworkStability {
   visible static String RECEIVED = "THIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVEDTHIS IS THE STRING THAT SHOULD BE RECEIVED"

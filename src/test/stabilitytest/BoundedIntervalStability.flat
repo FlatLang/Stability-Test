@@ -8,8 +8,8 @@ import flat/time/BoundedInterval
 import flat/time/Interval.InvalidIntervalException
 import flat/thread/Thread
 
-import novex/nest/Nest
-import novex/nest/TestSuite
+import flat/test/Test
+import flat/test/TestSuite
 
 testable class BoundedIntervalStability {
   test invalidUnboundedIntervalBounds() {

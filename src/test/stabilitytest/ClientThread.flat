@@ -4,8 +4,8 @@ import flat/io/OutputStream
 import flat/network/ClientSocket
 import flat/thread/Thread
 
-import novex/nest/Nest
-import novex/nest/TestSuite
+import flat/test/Test
+import flat/test/TestSuite
 
 class ClientThread extends Thread {
   public construct(private Int port, private OutputStream out) {}

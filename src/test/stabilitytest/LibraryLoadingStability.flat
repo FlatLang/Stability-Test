@@ -2,8 +2,8 @@ package stabilitytest
 
 // import flat/meta/Library
 
-import novex/nest/Nest
-import novex/nest/TestSuite
+import flat/test/Test
+import flat/test/TestSuite
 
 testable class LibraryLoadingStability {
   // var Library lib

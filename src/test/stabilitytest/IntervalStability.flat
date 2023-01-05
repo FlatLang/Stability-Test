@@ -7,8 +7,8 @@ import flat/time/Interval
 import flat/time/Interval.NoGapException
 import flat/thread/Thread
 
-import novex/nest/Nest
-import novex/nest/TestSuite
+import flat/test/Test
+import flat/test/TestSuite
 
 testable class IntervalStability {
   test threeHourInterval() {

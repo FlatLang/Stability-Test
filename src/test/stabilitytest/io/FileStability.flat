@@ -5,8 +5,8 @@ import flat/io/FileReader
 import flat/io/FileWriter
 import flat/time/Time
 
-import novex/nest/Nest
-import novex/nest/TestSuite
+import flat/test/Test
+import flat/test/TestSuite
 
 testable class {
   static String inputString = "This is test input..."

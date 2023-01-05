@@ -3,8 +3,8 @@ package stabilitytest
 import flat/io/FancyOutputStream
 import flat/io/StringBuilder
 
-import novex/nest/Nest
-import novex/nest/TestSuite
+import flat/test/Test
+import flat/test/TestSuite
 
 testable class FancyOutputStreamTests {
   var FancyOutputStream stream

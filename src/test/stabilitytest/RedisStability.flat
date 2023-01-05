@@ -2,8 +2,8 @@ package stabilitytest
 
 import flat/redis/RedisConnection
 
-import novex/nest/Nest
-import novex/nest/TestSuite
+import flat/test/Test
+import flat/test/TestSuite
 
 testable class RedisStability {
    var RedisConnection connection

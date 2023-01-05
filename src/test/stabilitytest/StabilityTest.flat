@@ -5,7 +5,7 @@ import flat/thread/Thread
 import flat/io/File
 import flat/io/FancyOutputStream
 
-import novex/nest/TestResult
+import flat/test/TestResult
 
 import stabilitytest/io
 import stabilitytest/syntax

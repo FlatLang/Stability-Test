@@ -3,8 +3,8 @@ package stabilitytest
 import flat/datastruct/list/LinkedList
 import flat/time/Time
 
-import novex/nest/Nest
-import novex/nest/TestSuite
+import flat/test/Test
+import flat/test/TestSuite
 
 testable class AssignmentStability {
   test `embedded property assignments`() {

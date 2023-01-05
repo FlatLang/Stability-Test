@@ -2,8 +2,8 @@ package stabilitytest/syntax
 
 import flat/datastruct
 
-import novex/nest/Nest
-import novex/nest/TestSuite
+import flat/test/Test
+import flat/test/TestSuite
 
 testable class {
   test `can access single explicit generic parameter type`() {
