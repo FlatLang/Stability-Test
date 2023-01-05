@@ -54,8 +54,8 @@ testable class PrimitiveOverloadStability {
     var sum = 0
     var counter = 0
 
-    map1.forEach(entry => {
-      sum += entry.key
+    map1.forEach({
+      sum += _.key
 
       counter++
     })
@@ -74,8 +74,8 @@ testable class PrimitiveOverloadStability {
     map2[3] = 2
     map2[-2] = 11
 
-    map2.forEach(entry => {
-      sum += entry.key * entry.value
+    map2.forEach({
+      sum += _x.key * _x.value
 
       counter++
     })
