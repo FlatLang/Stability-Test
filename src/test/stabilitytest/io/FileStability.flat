@@ -24,11 +24,11 @@ testable class {
 
     let parent = file.getParent()
 
-    expect(parent.name).toBe("dist")
+    expect(parent.name).toBe("js")
 
     let parentParent = parent.getParent()
 
-    expect(parentParent.name).toBe("Stability-Test")
+    expect(parentParent.name).toBe("dist")
   }
 
   // init_test_class initClass() {
