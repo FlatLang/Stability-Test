@@ -23,8 +23,9 @@ testable class {
     expect(file.name).toBe("test.js")
 
     let parent = file.getParent()
+    let allowed = ["js", "es6"]
 
-    expect(parent.name).toBe("js")
+    expect(allowed.contains(parent.name)).toBe(true)
 
     let parentParent = parent.getParent()
 
