@@ -11,7 +11,6 @@
   "sources": {
     "test": {
       "mainClass": "stabilitytest/StabilityTest",
-      "outDirectory": "dist",
       "source": "src",
       "dependencies": {
         "github:FlatLang/Standard-Library": "master",
