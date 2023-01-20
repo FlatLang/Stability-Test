@@ -67,7 +67,7 @@ class StabilityTest {
 
     if (suites.count > 0) {
       suites.forEach({
-        native TestResult[] suiteResults
+        native_array native TestResult[] suiteResults
         var count = 0
 
         external js {
