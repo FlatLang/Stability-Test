@@ -45,6 +45,7 @@ import stabilitytest/syntax
   DataClassStability,
   ReifiedGenericStability
 ]]
+[Target js]
 [TargetRuntime not browser]
 [TestSuite [
   NetworkStability,

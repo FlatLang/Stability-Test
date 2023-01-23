@@ -6,6 +6,7 @@ import flat/test/Test
 import flat/test/TestSuite
 
 testable class ThreadStability {
+  [Target js]
   public async `handles 20 Threads with memory access`() {
     ThreadImplementation[] threads = Array(20)
 
@@ -16,6 +17,7 @@ testable class ThreadStability {
     joinThreads(threads, 20)
   }
 
+  [Target js]
   createThreads(ThreadImplementation[] threads, Int amount) {
     StabilityExceptionHandler handler = StabilityExceptionHandler()
 
@@ -26,6 +28,7 @@ testable class ThreadStability {
     }
   }
 
+  [Target js]
   static async checkMemoryAccess() {
     Thread.sleep(30)
 
@@ -34,6 +37,7 @@ testable class ThreadStability {
     }
   }
 
+  [Target js]
   static joinThreads(ThreadImplementation[] threads, Int amount) {
     for (i in 0..amount) {
       threads[i].join()

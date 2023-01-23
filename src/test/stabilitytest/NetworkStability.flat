@@ -13,6 +13,7 @@ testable class NetworkStability {
 
   visible static Int PORT = 24243
 
+  [Target js]
   async test `starting ServerSocket`() {
     let server = ServerSocket()
 
@@ -20,6 +21,7 @@ testable class NetworkStability {
     expect(server.close()).toBe(true, "Unable to close server")
   }
 
+  [Target js]
   async test `ClientSocket connection`() {
     let server = ServerSocket():start(PORT)
 
@@ -38,6 +40,7 @@ testable class NetworkStability {
     expect(server.close()).toBe(true, "Unable to close server")
   }
 
+  [Target js]
   async test `Socket communication`() {
     let server = ServerSocket():start(PORT)
     let client = ClientSocket("localhost", PORT):connect()
