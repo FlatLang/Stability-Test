@@ -413,11 +413,11 @@ testable class SyntaxStability {
   	var myInts = [1, 2, 3, 4]
   	var sum = 0
 
-    myInts
-      .map({ _ * 2 })
-      :forEach({ sum += _ })
-      :forEach({ sum += 1 })
-      :forEach({ sum += 3 })
+    myInts // [1, 2, 3, 4]
+      .map({ _ * 2 }) // [2, 4, 6, 8]
+      :forEach({ sum += _ }) // 0 + (2 + 4 + 6 + 8) = 20
+      :forEach({ sum += 1 }) // 20 + (1 + 1 + 1 + 1) = 24
+      :forEach({ sum += 3 }) // 24 + (3 + 3 + 3 + 3) = 36
 
   	expect(sum).toBe(36)
   }
