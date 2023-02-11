@@ -1,0 +1,29 @@
+package stabilitytest
+
+import flat/selenium
+import flat/fucli
+import flat/io
+
+class {
+  static CliArg sourceArg = CliArg(
+    name: "source",
+    description: "The file to run in the selenium browser",
+    count: 1,
+    wildcard: true,
+    required: true
+  )
+
+  public static async main(String[] args) {
+    let cli = FuCli("stability-test-browser", [sourceArg]):parse(args.skip(1))
+
+    let driver = Selenium.getDriver(Browser.CHROME)
+
+    try {
+      let script = FileReader(File(sourceArg.value)).readAllContents()
+
+      driver.executeScript(script)
+    } finally {
+      driver.quit()
+    }
+  }
+}
