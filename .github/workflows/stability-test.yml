@@ -18,6 +18,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        runtime: [node, browser]
+        target: [js, es6]
+
     steps:
       - name: Setup Maven Action
         uses: s4u/setup-maven-action@v1.5.0
@@ -58,15 +63,28 @@ jobs:
       - name: Build Stability Test
         working-directory: Stability-Test
         run: |
-          node ../airship.js install test
+          node ../airship.js install test --target ${{ matrix.target }} --runtime ${{ matrix.runtime }}
 
       - uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: test.js
-          path: Stability-Test/dist/js/test.js
+          path: Stability-Test/dist/${{ matrix.target }}/test.js
 
       - name: Run Stability Test
+        if: ${{ matrix.runtime == 'node' }}
         working-directory: Stability-Test
         run: |
-          node ../airship.js run test
+          node ../airship.js run test --target ${{ matrix.target }}
+
+      - name: Build Browser Stability Test
+        if: ${{ matrix.runtime == 'browser' }}
+        working-directory: Stability-Test
+        run: |
+          node ../airship.js install browser --target ${{ matrix.target }}
+
+      - name: Run Browser Stability Test
+        if: ${{ matrix.runtime == 'browser' }}
+        working-directory: Stability-Test
+        run: |
+          node dist/${{ matrix.target }}/browser-stability-test.js dist/${{ matrix.target }}/test.js
