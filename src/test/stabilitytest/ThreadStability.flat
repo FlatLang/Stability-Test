@@ -1,9 +1,6 @@
 package stabilitytest
 
-import flat/thread/Thread
-
-import flat/test/Test
-import flat/test/TestSuite
+import flat/thread
 
 testable class ThreadStability {
   [Target js]

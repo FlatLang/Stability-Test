@@ -1,10 +1,6 @@
 package stabilitytest
 
-import flat/thread/UncaughtExceptionHandler
-import flat/thread/Thread
-
-import flat/test/Test
-import flat/test/TestSuite
+import flat/thread
 
 class StabilityExceptionHandler extends UncaughtExceptionHandler {
   public uncaughtException(Thread thread, Exception exception) => fail()
