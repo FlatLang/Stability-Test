@@ -6,11 +6,11 @@ import flat/test/Test
 import flat/test/TestSuite
 
 testable class RedisStability {
-   var RedisConnection connection
+     var RedisConnection connection
 
-  test `Redis get`() {
-    connection = RedisConnection()
+    test `Redis get`() {
+        connection = RedisConnection()
 
 
-  }
+    }
 }

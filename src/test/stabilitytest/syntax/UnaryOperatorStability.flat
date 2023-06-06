@@ -6,17 +6,17 @@ import flat/test/Test
 import flat/test/TestSuite
 
 testable class {
-  async testFunc() => true {
+    async testFunc() => true {
 
-  }
-
-  async test `parses complex unary operater in if statement condition`() {
-    if (!testFunc()) {
-      fail("Should not get into if statement")
     }
-  }
 
-  async test `parses complex unary operater in function call argument`() {
-    expect(!testFunc()).toBe(false)
-  }
+    async test `parses complex unary operater in if statement condition`() {
+        if (!testFunc()) {
+            fail("Should not get into if statement")
+        }
+    }
+
+    async test `parses complex unary operater in function call argument`() {
+        expect(!testFunc()).toBe(false)
+    }
 }
