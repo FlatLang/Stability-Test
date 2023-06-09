@@ -16,22 +16,22 @@
       "bin": "browser-stability-test",
       "outFile": "browser-stability-test.js",
       "dependencies": {
-        "https://github.com/FlatLang/FuCli": "master",
-        "https://github.com/FlatLang/System": "master",
-        "https://github.com/FlatLang/IO": "master",
-        "https://github.com/FlatLang/Selenium": "master"
+        "https://github.com/FlatLang/FuCli.git": "master",
+        "https://github.com/FlatLang/System.git": "master",
+        "https://github.com/FlatLang/IO.git": "master",
+        "https://github.com/FlatLang/Selenium.git": "master"
       }
     },
     "test": {
       "mainClass": "stabilitytest/StabilityTest",
       "source": "src",
       "dependencies": {
-        "https://github.com/FlatLang/Test": "master",
-        "https://github.com/FlatLang/System": "master",
-        "https://github.com/FlatLang/IO": "master",
-        "https://github.com/FlatLang/Network": "master",
-        "https://github.com/FlatLang/Redis": "master",
-        "https://github.com/FlatLang/Thread": "master"
+        "https://github.com/FlatLang/Test.git": "master",
+        "https://github.com/FlatLang/System.git": "master",
+        "https://github.com/FlatLang/IO.git": "master",
+        "https://github.com/FlatLang/Network.git": "master",
+        "https://github.com/FlatLang/Redis.git": "master",
+        "https://github.com/FlatLang/Thread.git": "master"
       }
     }
   }
