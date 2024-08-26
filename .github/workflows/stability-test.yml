@@ -2,11 +2,11 @@ name: Stability Test
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
   schedule:
-    - cron: '0 4 * * *'
+    - cron: "0 4 * * *"
 
 env:
   LOGGING_DEFAULT_SHOW_PREFIX: true
@@ -15,7 +15,6 @@ env:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -40,7 +39,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Cache Maven dependencies
         uses: actions/cache@v3
